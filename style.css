@@ -186,8 +186,8 @@ html {
 
 
 .zoomable-container.zoomed img {
-  transform: scale(2); /* Adjust scale as needed */
-  max-width: 500px; /* Allows image to exceed container width */
+  transform: scale(1.5); /* Adjust scale as needed */
+  max-width: none; /* Allows image to exceed container width */
   max-height: none; /* Allows image to exceed container height */
 }
 
