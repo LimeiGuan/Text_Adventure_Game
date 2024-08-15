@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="icon" type="image/x-icon" href="favicon.ico">
+  	<title> TEXT ADVENTURE GAME </title>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>  
+<body>
+<div class="doc"></div>
+<nav id="header">
+	  <img class="icon" src="icon.png" alt="logo"/>
+	  <h1 class="logo">Text Adventure Game Documentation </h1>
+	  <ul class="menu">
+		  <div class="menu__item toggle"><span></span></div>
+		  <li class="menu__item"><a href="https://github.com/Fey-Lune/FeyLune.github.io/" target="_blank" class="link"><i class="fa fa-github"></i> Github</a></li>
+		  <li class="menu__item"><a href="https://drive.google.com/file/d/1n1etcfF_QfYwWjImWTa9Ogv8iFsLusXK/view?usp=drive_link" target="_blank" class="link"><i class="fa fa-book"></i> Nightmare</a>  
+		  <li class="menu__item"><a href="https://docs.google.com/document/d/17NTZMUaxwC0__4DlPg21nNt1C03CjNqkKHr5cp1aaRE/edit?usp=drive_link" target="_blank" class="link"><i class="fa fa-file-pdf-o"></i> User Stories</a></li>
+
+	  </ul>
+  </nav>
+
+<div class="wrapper">
+	<aside class="doc__nav" id="doc-nav">
+		<ul>
+			<li class="js-btn"><a href="#introduction">Introduction</a></li>
+			<li class="js-btn"><a href="#manual">Manual</a></li>
+			<li class="js-btn"><a href="#design">Design</a></li>
+		</ul>
+	</aside>
+	<article class="doc__content">
+		
+		<section class="js-section" id="introduction">
+			<h2>Introduction</h2>
+			<p>
+				Welcome to the <b>Text Adventure Game</b>. <br>
+				We will guide you throught the gameplay, mechanics and commands of the game.<br>
+				I hope you will enjoy this interactive game.
+			</p>
+			
+			<h3>Premise</h3>
+			<p>
+				Waking up in a dimly lit room of a hospital, you find yourself lying on a cold, metal bed.<br>
+				The air is thick with the scent of decay and antiseptic. <br>
+				You try to recall how you got there, but your mind is blanck. <br>
+				As you try to find the exit, you encounter strange creatures never seen before. <br>
+				Find a way out and recover your memories, as you <b>try not to get yourself killed</b>.
+			</p>
+			
+			<h3>User stories</h3>
+			<p>
+				 Link futuro.
+			</p>
+
+			<h3>JavaDoc</h3>
+			<p>
+				Link futuro.
+			</p>
+		</section>
+
+		<section class="js-section" id="manual">
+			<h2>Manual</h2>
+			<h3>Gameplay</h3>
+			<p>
+				The game is set in three different levels of the hospital:<br>
+				<ul>
+					<li>the ground floor</li>
+					<li>the first floor</li>
+					<li>the second floor</li>	
+				</ul>
+				Each floor has rooms, where you can find items and fight the monsters called "Nightmares".<br>
+
+				When you start the game, the screen will display the main menu, where you can choose:
+				<ul>
+					<li>to start a new game</li>
+					<li>to load a pre-existing game</li>
+					<li>to delete a pre-existing game</li>
+					<li>to show the list of pre-existing games</li>
+				</ul>
+
+				Find the key for the exit room to complete the game.
+			</p>
+			<h3>Command List</h3>
+				<table class"table-commands"> 
+					<tr>
+						<th>Command</th>
+						<th>Argument</th>
+						<th>Description</th>
+					</tr>
+				</table>
+			<h3>Game map</h3>
+				<div class="zoomable-container" onclick="toggleZoom(this)">
+					<img src="map.drawio.svg" alt="Map of the game" width="500">
+				</div>
+			<h3>Dependencies</h3>
+			<h3>Installation and Setup guide</h3>
+		</section>
+
+		<section class="js-section" id="design">
+			<h2>Design</h2>
+			<h3>Domain Model</h3>
+				<div class="zoomable-container" onclick="toggleZoom(this)">
+					<img src="DomainModel.png" alt="Domain Model" width="500">
+				</div>
+			<h3>System Sequence Diagram</h3>
+			<h3>Internal Sequence Diagram</h3>
+			<h3>Design class model</h3>
+		</section>
+		<script>
+    			function toggleZoom(element) {
+      				element.classList.toggle('zoomed');
+    			}
+  		</script>
+</body>
+</html>
