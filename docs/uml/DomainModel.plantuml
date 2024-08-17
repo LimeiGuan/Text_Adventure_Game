@@ -3,8 +3,14 @@
 !theme materia-outline
 
 skinparam ArrowColor #DC143C
+
 skinparam ObjectBorderColor #C41E3A
 skinparam ObjectFontColor #831D1C
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+title DomainModel
 
 object Player {
   name
