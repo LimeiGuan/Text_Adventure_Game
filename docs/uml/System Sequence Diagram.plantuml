@@ -1,0 +1,100 @@
+@startuml SystemSequenceDiagram
+
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+skinparam SequenceGroupBorderColor #DC143C
+
+
+title System Sequence Diagram
+
+actor Player
+participant Game
+
+Game --> Player : Display the main screen
+
+alt "new game" command
+    Player -> Game : new Game
+    Game --> Player : asks for your name   
+    Player -> Game : reply
+else "load game" command 
+    Player -> Game : Load Game
+end
+
+Game --> Player : Display game interface
+
+loop until the game is over
+    Player -> Game : submit a command
+
+    alt "look around" command
+        Player --> Game : look around
+        Game --> Player : list of items in the current room
+
+    else "enter <room name>" command
+        Player --> Game : go into <room name>
+        alt room locked
+            Game --> Player : returns an error message
+        else 
+            Game --> Player : moves player in the desired room
+        end
+
+    else "interact <item>" command
+        Player --> Game : interact with <item>
+        Game --> Player : description of item
+    
+    else "pick <item>" command
+        Player --> Game : pick up the item
+        Game --> Player : item is added in the inventory
+
+    else "use <item>" command
+        Player --> Game : use item in the inventory
+        alt  item present in the inventory and can be used in the room
+            Game --> Player : Let the player use the object
+        else the item not present in the inventory or cannot be used 
+            Game --> Player : returns an error message
+        end
+
+    else "attack" command
+        Player --> Game : attack the monster
+        alt monster present in the room
+            Game --> Player : monster loses hp
+        else no monster present in the room
+            Game --> Player : returns an error message
+        end
+    
+    else "inventory" command
+        Player --> Game : inventory
+        Game --> Player : shows all items in inventory
+
+    else "help" command
+        Player --> Game : help
+        Game --> Player : display list of all commands the player can use
+
+    else "save" command
+        Player --> Game: save
+        Game --> Player : saves the game
+
+    else "exit" command
+        Player -> Game : Exit
+            alt game saved
+                Game --> Player : exit the game saving changes
+            else game not saved
+                Game --> Player : asks if user wants to save the game
+                Player -> Game : "yes" or "no"
+                Game --> Player : exit the game saving or not saving the game
+            end
+    end
+end
+
+@enduml
