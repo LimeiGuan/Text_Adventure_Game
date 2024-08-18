@@ -3,6 +3,7 @@
 !theme materia-outline
 
 skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
 
 skinparam ObjectBorderColor #C41E3A
 skinparam ObjectFontColor #831D1C
