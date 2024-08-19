@@ -9,6 +9,9 @@ skinparam ClassFontColor #DC143C
 skinparam ClassBackgroundColor #FFFFFF
 skinparam ClassBorderColor #DC143C
 
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
 title Design Class Model
 
 class Player {}
