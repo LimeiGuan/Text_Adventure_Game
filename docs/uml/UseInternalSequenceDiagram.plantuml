@@ -1,1 +1,13 @@
+@startuml UseInternalSequenceDiagram
 
+!theme materia-outline
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+title Use Internal Sequence Diagram
+
+
+
+
+@enduml
