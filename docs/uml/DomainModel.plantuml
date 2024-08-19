@@ -11,7 +11,7 @@ skinparam ObjectFontColor #831D1C
 skinparam titleBorderColor #DC143C
 skinparam titleFontColor #DC143C
 
-title DomainModel
+title Domain Model
 
 object Player {
   name
