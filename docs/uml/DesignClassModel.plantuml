@@ -1,1 +1,27 @@
+@startuml DesignClassModel
 
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam ClassFontColor #DC143C
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #DC143C
+
+
+class Player {}
+
+class Game{}
+
+class Inventory{}
+
+class Enemy{}
+
+class Map{}
+
+class Item{}
+
+class Room{}
+
+@enduml
