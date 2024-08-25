@@ -19,6 +19,7 @@ object Player {
   curr_health
   attack
   curr_Position
+  buff
   }
   
 object Enemy{
@@ -52,7 +53,7 @@ Player "1" --> "*" Room: visits
 Player "1" --> "1" Inventory: has
 Player "1" --> "*" Item: collects
 
-Game "1" --> "*" Map: has
+Game "1" --> "1" Map: has
 Item "*" --> "1" Room: present in
 Inventory "1" --> "*" Item: carry
 Map "1" --> "*" Room: contains
