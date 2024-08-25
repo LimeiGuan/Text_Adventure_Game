@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1095.8333px" preserveAspectRatio="none" style="width:656px;height:1095px;background:#FFFFFF;" version="1.1" viewBox="0 0 656 1095" width="656.25px" zoomAndPan="magnify"><defs><filter height="300%" id="f15q5ucbb2is2i" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0833333333333335"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.166666666666667" dy="4.166666666666667" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" height="57.5846" id="_title" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="203.125" x="222.25" y="20.8333"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="20.8333" font-weight="bold" lengthAdjust="spacing" textLength="169.7917" x="238.9167" y="56.838">Domain Model</text><g id="elem_Player"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="251.7008" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="110.4167" x="220.3125" y="97.168"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="36.4583" x="257.2917" y="120.3039">Player</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="221.3542" x2="329.6875" y1="135.5062" y2="135.5062"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="33.3333" x="236.9792" y="160.7254">name</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="67.7083" x="236.9792" y="194.897">max_health</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="66.6667" x="236.9792" y="229.0685">curr_health</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="35.4167" x="236.9792" y="263.2401">attack</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="77.0833" x="236.9792" y="297.4116">curr_Position</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="22.9167" x="236.9792" y="331.5832">buff</text></g><g id="elem_Enemy"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="183.3577" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="101.0417" x="17.7083" y="534.668"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="39.5833" x="48.4375" y="557.8039">Enemy</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="18.75" x2="117.7083" y1="573.0062" y2="573.0062"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="33.3333" x="34.375" y="598.2254">name</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="67.7083" x="34.375" y="632.397">max_health</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="66.6667" x="34.375" y="666.5685">curr_health</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="35.4167" x="34.375" y="700.7401">attack</text></g><g id="elem_Game"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="55.0049" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="70.8333" x="123.4375" y="448.2096"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="35.4167" x="141.1458" y="471.3455">Game</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="124.4792" x2="193.2292" y1="486.5479" y2="486.5479"/></g><g id="elem_Inventory"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="55.0049" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="89.5833" x="230.7292" y="448.2096"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="54.1667" x="248.4375" y="471.3455">Inventory</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="231.7708" x2="319.2708" y1="486.5479" y2="486.5479"/></g><g id="elem_Item"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="80.8431" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="66.6667" x="303.6458" y="749.2513"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="26.0417" x="323.9583" y="772.3872">Item</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="304.6875" x2="369.2708" y1="787.5895" y2="787.5895"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="33.3333" x="320.3125" y="812.8087">name</text></g><g id="elem_Room"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="149.1862" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="111.4583" x="220.8333" y="929.4596"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="33.3333" x="259.8958" y="952.5955">Room</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="221.875" x2="331.25" y1="967.7979" y2="967.7979"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="27.0833" x="237.5" y="993.0171">floor</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="78.125" x="237.5" y="1027.1886">roomNumber</text><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="65.625" x="237.5" y="1061.3602">roomName</text></g><g id="elem_Map"><rect fill="none" filter="url(#f15q5ucbb2is2i)" height="55.0049" rx="4.1667" ry="4.1667" style="stroke:#C41E3A;stroke-width:1.0416666666666667;" width="59.375" x="186.4583" y="762.2721"/><text fill="#831D1C" font-family="&quot;Verdana&quot;" font-size="11.4583" lengthAdjust="spacing" textLength="23.9583" x="204.1667" y="785.408">Map</text><line style="stroke:#C41E3A;stroke-width:1.0416666666666667;" x1="187.5" x2="244.7917" y1="800.6104" y2="800.6104"/></g><!--MD5=[86fb2dafc5e601216a471b22a40ae449]
+link Player to Game--><g id="link_Player_Game"><path codeLine="48" d="M220.2604,342.9076 C203.0313,379.8971 185.4479,417.668 173.5417,443.2409 " fill="none" id="Player-to-Game" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="171.2292,448.1888,178.9706,441.4567,173.4325,443.4695,171.4197,437.9313,171.2292,448.1888" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="33.3333" x="210.9375" y="403.5624">plays</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="193.4347" y="342.4852">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="187.206" y="426.7157">1</text></g><!--MD5=[ddbaeee7367264c039bc74c4bcc0778f]
+link Player to Enemy--><g id="link_Player_Enemy"><path codeLine="49" d="M220.0208,265.8138 C185.8333,294.3555 143.9479,335.1888 119.2708,380.5013 C94.5313,425.9284 81.7604,482.1055 75.1771,529.1784 " fill="none" id="Player-to-Enemy" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="74.4479,534.5742,79.8386,525.8454,75.149,529.4133,71.5811,524.7237,74.4479,534.5742" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="36.4583" x="130.7292" y="403.5624">fights</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="193.1674" y="256.4775">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="57.1519" y="512.8983">*</text></g><!--MD5=[77f2529205d0aea4d738b7e9ef09546d]
+link Player to Room--><g id="link_Player_Room"><path codeLine="50" d="M330.9375,274.6784 C372.5,316.5013 426.0938,379.9805 449.4792,448.2096 C488.7917,562.918 644.5,478.7409 413.0208,898.2096 C395.7708,929.4805 364.8542,954.3763 336.8021,972.043 " fill="none" id="Player-to-Room" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="332.3333,974.8138,342.4938,973.3938,336.7542,972.0601,338.0879,966.3204,332.3333,974.8138" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="32.2917" x="548.4375" y="631.1666">visits</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="349.4479" y="266.3671">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="351.1975" y="956.8615">*</text></g><!--MD5=[7c31ad103c1e13678f6bcbdd36a4815c]
+link Player to Inventory--><g id="link_Player_Inventory"><path codeLine="51" d="M275.5208,349.5117 C275.5208,384.0846 275.5208,418.6576 275.5208,442.6888 " fill="none" id="Player-to-Inventory" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="275.5208,447.9596,279.6875,438.5846,275.5208,442.7513,271.3542,438.5846,275.5208,447.9596" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="23.9583" x="286.9792" y="403.5624">has</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="255.9733" y="379.4163">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="253.763" y="426.4393">1</text></g><!--MD5=[b11842bc074c925485e629d6386edabb]
+link Player to Item--><g id="link_Player_Item"><path codeLine="52" d="M320.8021,349.293 C324.2708,359.8138 327.625,370.3138 330.7292,380.5013 C374.7083,524.9805 403.2604,570.6159 370.3125,718.0013 C368.375,726.6784 365.25,735.543 361.6667,743.9388 " fill="none" id="Player-to-Item" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="359.3854,749.1055,366.9706,742.1977,361.48,744.3369,359.3409,738.8463,359.3854,749.1055" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="379.6875" y="480.6458">collects</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="334.4926" y="379.1856">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="344.1315" y="727.6256">*</text></g><!--MD5=[d2bcaf4b26145a3f99c777208a8a8c40]
+link Game to Map--><g id="link_Game_Map"><path codeLine="54" d="M163.625,503.6367 C171.5833,548.1576 188.1146,640.1992 202.6042,718.0013 C204.9479,730.5951 207.5833,744.4388 209.9063,756.5221 " fill="none" id="Game-to-Map" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="210.9375,761.9388,213.2631,751.9466,209.9561,756.8238,205.079,753.5168,210.9375,761.9388" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="23.9583" x="214.0625" y="631.1666">has</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="143.1885" y="533.4965">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="188.1055" y="740.4013">1</text></g><!--MD5=[7b499f4900142d387ab5d37363e29797]
+link Item to Room--><g id="link_Item_Room"><path codeLine="55" d="M325.6146,830.793 C318.125,857.0846 308.0521,892.4284 298.9792,924.2409 " fill="none" id="Item-to-Room" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="297.5313,929.3138,304.1069,921.439,298.9582,924.3047,296.0924,919.156,297.5313,929.3138" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="66.6667" x="326.5625" y="884.8124">present in</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="305.7568" y="860.3477">*</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="311.6142" y="907.5304">1</text></g><!--MD5=[e1b2ae683ed02351daddc3242d282e46]
+link Inventory to Item--><g id="link_Inventory_Item"><path codeLine="56" d="M277.6354,503.6159 C281.5833,548.4909 291.4896,641.5221 310.9375,718.0013 C313.1042,726.5221 315.9271,735.4388 318.9063,743.9596 " fill="none" id="Inventory-to-Item" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="320.7813,749.2096,321.5382,738.9784,319.0229,744.3071,313.6942,741.7917,320.7813,749.2096" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="32.2917" x="322.3958" y="631.1666">carry</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="256.7424" y="533.4721">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="299.189" y="727.3893">*</text></g><!--MD5=[6c9d9c910449a30ad5250fee9ffed366]
+link Map to Room--><g id="link_Map_Room"><path codeLine="57" d="M213.4896,817.8763 C212.1354,839.8867 212.0521,871.5951 219.2708,898.2096 C221.6458,906.9805 224.8958,915.8242 228.6458,924.4492 " fill="none" id="Map-to-Room" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="230.7813,929.2201,230.7485,918.9609,228.6508,924.4674,223.1442,922.3697,230.7813,929.2201" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="56.25" x="230.7292" y="884.8124">contains</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="191.7765" y="847.7666">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="6.25" x="208.275" y="907.8559">*</text></g><!--MD5=[071ec3348b75656923db4758eef3b7c3]
+link Enemy to Room--><g id="link_Enemy_Room"><path codeLine="58" d="M62.6771,718.2305 C63.9167,754.7721 69.9167,796.2721 86.9792,830.5013 C115.5729,887.8555 172.0104,935.2513 215.9063,965.7305 " fill="none" id="Enemy-to-Room" style="stroke:#DC143C;stroke-width:3.125;"/><polygon fill="#DC143C" points="220.3854,968.8138,215.027,960.0652,216.0957,965.86,210.3009,966.9287,220.3854,968.8138" style="stroke:#DC143C;stroke-width:3.125;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="58.3333" x="98.4375" y="794.7083">occupies</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="42.4484" y="748.2969">1</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="8.3333" x="193.896" y="950.7793">1</text></g><!--MD5=[b1cc8b319c9cb8f9c054bf49d7672f8e]
+@startuml
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam ObjectBorderColor #C41E3A
+skinparam ObjectFontColor #831D1C
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+title Domain Model
+
+object Player {
+  name
+  max_health
+  curr_health
+  attack
+  curr_Position
+  buff
+  }
+  
+object Enemy{
+  name
+  max_health
+  curr_health
+  attack
+  }
+
+object Game
+
+object Inventory
+
+object Item {
+  name
+  }
+
+object Room {
+  floor
+  roomNumber
+  roomName
+  }
+
+object Map{
+  }
+
+
+Player "1" - -> "1" Game: plays
+Player "1" - -> "*" Enemy: fights
+Player "1" - -> "*" Room: visits
+Player "1" - -> "1" Inventory: has
+Player "1" - -> "*" Item: collects
+
+Game "1" - -> "1" Map: has
+Item "*" - -> "1" Room: present in
+Inventory "1" - -> "*" Item: carry
+Map "1" - -> "*" Room: contains
+Enemy "1" - -> "1" Room: occupies
+@enduml
+
+@startuml
+
+
+
+skinparam backgroundColor transparent
+skinparam useBetaStyle false
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor transparent
+    FontColor #2196F3
+    HyperLinkColor #fd7e14
+    LineColor #1a78c2
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+   Padding 15
+   roundcorner 20
+   BackgroundColor transparent
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #fff
+    FontColor #9C27B0
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #222
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #222
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  transparent
+	FontColor #2196F3
+	BorderColor #fff
+  }
+  nwdiagDiagram {
+	network {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent    
+		LineColor #2196F3
+		LineThickness 1.0
+		FontColor #1a78c2
+	}
+	server {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	}
+	arrow {
+		FontColor #1a78c2
+		LineColor #1a78c2
+	}
+	group {
+		BackGroundColor #fff
+		LineColor $LIGHT_DARK
+		LineThickness 2.0
+		Margin 5
+		Padding 5
+	}
+  }
+  ganttDiagram {
+	task {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+		LineColor #2196F3
+		Margin 10
+		Padding 6
+	}
+	note {
+		FontColor #9C27B0
+		LineColor #7D1F8D
+		BackGroundColor transparent
+	}
+	separator {
+		LineColor #cccccc
+		BackGroundColor transparent
+		FontColor #cccccc
+	}
+	milestone {
+		FontColor #9C27B0
+		FontSize 16
+		FontStyle italic
+		BackGroundColor #fff
+		LineColor #cccccc
+	}
+	timeline {
+		BackgroundColor #fff
+		FontColor #cccccc
+	}
+	closed {
+		BackgroundColor #CC7A00
+		FontColor #ff9800
+	}
+  }
+</style>
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               10 
+skinparam TitleFontColor	    #222
+skinparam TitleFontSize	    	20
+skinparam TitleBorderThickness 	0
+skinparam ArrowColor            #666
+skinparam stereotype {
+    CBackgroundColor #fff
+    CBorderColor #cccccc
+    ABackgroundColor #70bf73
+    ABorderColor #3D8C40
+    IBackgroundColor #B7161C
+    IBorderColor $DANGER_DARK
+    EBackgroundColor #ffad33
+    EBorderColor #CC7A00
+    NBackgroundColor #b052c0
+    NBorderColor #7D1F8D
+}
+skinparam title {
+	FontColor	                 #2196F3
+	BorderColor	                 #cccccc
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor              transparent
+}
+
+skinparam legend {
+	BackgroundColor transparent
+	BorderColor #cccccc
+	FontColor #222
+}
+
+skinparam swimlane {
+	BorderColor #9C27B0
+	BorderThickness 2
+	TitleBackgroundColor  #fff-#fff
+	TitleFontColor #2196F3
+}
+
+
+skinparam activity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BarColor #4CAF50
+	StartColor #9C27B0
+	EndColor #9C27B0
+	DiamondBackgroundColor transparent
+  	DiamondBorderColor #cccccc
+	DiamondFontColor #cccccc
+}
+
+
+skinparam participant {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	ParticipantBorderThickness 2
+}
+
+
+skinparam actor {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam arrow {
+	Thickness 3
+	Color #2196F3
+	FontColor #222
+}
+
+
+skinparam sequence {
+	BorderColor #2196F3
+	TitleFontColor #2196F3
+	BackgroundColor transparent
+	StartColor #2196F3
+	EndColor #2196F3
+	BoxBackgroundColor transparent
+	BoxBorderColor #666
+	BoxFontColor #222
+	DelayFontColor #222
+	LifeLineBorderColor #cccccc
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor transparent
+	GroupBorderColor #666
+	GroupFontColor #222
+	GroupHeaderFontColor #9C27B0
+	DividerBackgroundColor transparent
+    DividerBorderColor #666
+    DividerBorderThickness 2
+    DividerFontColor #222
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #666
+	ReferenceFontColor #222
+	ReferenceHeaderFontColor #9C27B0
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam partition {
+	BorderColor #2196F3
+	FontColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam collections {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam control {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam entity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam boundary {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam agent {
+	BackgroundColor transparent
+	BorderColor #999999
+	FontColor #333333
+}
+
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam artifact {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+}
+
+
+skinparam component {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam interface {
+	BackgroundColor  transparent
+	BorderColor  #e51c23
+	FontColor #222
+}
+
+
+skinparam storage {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+}
+
+
+skinparam node {
+	BackgroundColor transparent
+	BorderColor #222
+	FontColor #222
+}
+
+
+skinparam cloud {
+	BackgroundColor #F2FCFE-#eeeeee
+	BorderColor #F2FCFE
+	FontColor #222
+}
+
+
+skinparam database {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam class {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	FontColor #fff
+	HeaderBackgroundColor #2196F3-#1a78c2
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #222
+	AttributeFontSize 11
+}
+
+
+skinparam object {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam usecase {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam rectangle {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam package {
+	BackgroundColor transparent
+  	BorderColor #2196F3
+	FontColor #2196F3
+	BorderThickness 2
+}
+
+
+skinparam folder {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+	BorderThickness 2
+}
+
+
+skinparam frame {
+	BackgroundColor transparent
+  	BorderColor #9C27B0
+	FontColor #9C27B0
+	BorderThickness 2
+}
+
+
+skinparam state {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StartColor #9C27B0
+	EndColor #9C27B0
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam queue {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam card {
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam file {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+
+}
+
+
+skinparam stack {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam ObjectBorderColor #C41E3A
+skinparam ObjectFontColor #831D1C
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+title Domain Model
+
+object Player {
+  name
+  max_health
+  curr_health
+  attack
+  curr_Position
+  buff
+  }
+  
+object Enemy{
+  name
+  max_health
+  curr_health
+  attack
+  }
+
+object Game
+
+object Inventory
+
+object Item {
+  name
+  }
+
+object Room {
+  floor
+  roomNumber
+  roomName
+  }
+
+object Map{
+  }
+
+
+Player "1" - -> "1" Game: plays
+Player "1" - -> "*" Enemy: fights
+Player "1" - -> "*" Room: visits
+Player "1" - -> "1" Inventory: has
+Player "1" - -> "*" Item: collects
+
+Game "1" - -> "1" Map: has
+Item "*" - -> "1" Room: present in
+Inventory "1" - -> "*" Item: carry
+Map "1" - -> "*" Room: contains
+Enemy "1" - -> "1" Room: occupies
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
