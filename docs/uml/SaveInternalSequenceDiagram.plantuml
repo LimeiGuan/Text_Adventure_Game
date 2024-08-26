@@ -2,12 +2,39 @@
 
 !theme materia-outline
 
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
 skinparam titleBorderColor #DC143C
 skinparam titleFontColor #DC143C
 
-title Save Internal Sequence Diagram
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
 
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
 
+title Save - Internal Sequence Diagram
 
+actor User
+participant GameUI
+participant GameController
+
+activate GameUI
+User -> GameUI : insert "save" command
+
+activate GameController
+GameUI -> GameController : "save"
+
+GameController -> GameController : save the progress
+
+GameController -> GameController : upload
+
+GameController --> GameUI : return "Game saved"
+deactivate GameController
+
+GameUI --> User : show "Game saved"
+
+deactivate GameUI
 
 @enduml
