@@ -14,7 +14,6 @@ skinparam titleFontColor #DC143C
 title Domain Model
 
 object Player {
-  name
   max_health
   curr_health
   attack
@@ -23,7 +22,6 @@ object Player {
   }
   
 object Enemy{
-  name
   max_health
   curr_health
   attack
@@ -34,16 +32,15 @@ object Game
 object Inventory
 
 object Item {
+  id
   name
+  description
   }
 
 object Room {
   floor
   roomNumber
   roomName
-  }
-
-object Map{
   }
 
 
@@ -53,10 +50,9 @@ Player "1" --> "*" Room: visits
 Player "1" --> "1" Inventory: has
 Player "1" --> "*" Item: collects
 
-Game "1" --> "1" Map: has
+Game "1" --> "1" Room: has
 Item "*" --> "1" Room: present in
 Inventory "1" --> "*" Item: carry
-Map "1" --> "*" Room: contains
 Enemy "1" --> "1" Room: occupies
 
 @enduml
