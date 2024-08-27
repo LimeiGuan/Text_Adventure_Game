@@ -27,6 +27,7 @@ class Player{
   +unequip()
   +changePosition()
   +getPosition()
+  +setPosition()
 }
 
 class Enemy{
@@ -61,7 +62,7 @@ class GameManager{
   +lift()
 }
 
-class Save{}
+class GameSaveService{}
 
 class Inventory{
   -inventory: ArrayList<>
