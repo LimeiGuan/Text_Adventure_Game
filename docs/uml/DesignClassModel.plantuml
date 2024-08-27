@@ -27,6 +27,7 @@ class Player{
   +unequip()
   +changePosition()
   +getPosition()
+  +setPosition()
 }
 
 class Enemy{
@@ -55,10 +56,13 @@ class GameManager{
   +room103()
   +hallway1()
   +hallway2()
+  +mainhall()
   +controlRoom()
   +morgue()
   +lift()
 }
+
+class GameSaveService{}
 
 class Inventory{
   -inventory: ArrayList<>
