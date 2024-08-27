@@ -1,7 +1,11 @@
 package hospital;
 import com.fasterxml.jackson.annotation.JsonProperty;
 /**
- * This class represents a default character, with attributes for stamina and damage
+ * The Character class represents a default character, with attributes for stamina and damage
+ * 
+ * <p>This class integrates with Jackson for JSON serialization and deserialization. The 
+ * fields are annotated with {@link JsonProperty} to specify how they should be mapped to 
+ * and from JSON.</p>
  */
 public class Character
 {
