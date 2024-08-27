@@ -51,7 +51,24 @@ class Weapon{}
 
 class Room{}
 
-    Character <|-- Player : extends
-    Character <|-- Enemy : extends
+Character <|-- Player : extends
+Character <|-- Enemy : extends
+
+Item <|-- ItemEquipable : extends
+Item <|-- ItemInteract : extends
+Item"0...*" <|-- "1"Inventory : contains
+item"0...*" <|-- "1"Room : has
+
+ItemEquipable <|-- Weapon: extends
+ItemEquipable <|-- Medicine: extends
+
+Player"1" --|> "0...*"Item : uses 
+Player"1" --|> "1"Inventory : has
+Player"1" --|> "1"Room : located
+
+GameManager"1" --|> "1"Player : creates
+GameManager"1" --|> "n"Enemy : creates
+GameManager"1" <|--|> "1"GameUI : uses
+GameManager"1" --|> "n"Room : creates
 
 @enduml
