@@ -15,21 +15,38 @@ class CharacterTest
 {
 	
 	Character npc;
-	int max_hp = 100;
+	int max_hp = 200;
 	
 	@BeforeEach
 	void setUp() throws Exception
 	{	npc = new Character(max_hp);
 	}
 	
-	@Test
-	@DisplayName("test the constructor with illegal argument")
-	void testCharacter()
+	@Nested
+	@DisplayName("Testing the constructors")
+	class Constructor
 	{
-		Character npc = new Character(-1);
-		assertNotEquals(-1, npc.getMaxHealth());
+		@Test
+		@DisplayName("testing the defaul constructor")
+		void testDefault()
+		{
+	        Character character = new Character();
+	        assertEquals(100, character.getMaxHealth());
+	        assertEquals(100, character.getCurrHealth());
+	        assertEquals(50, character.getAttackValue());
+		}
+		
+		@Test
+		@DisplayName("testing the parametrized constructor ")
+		void testParam()
+		{
+			assertEquals(max_hp, npc.getMaxHealth(), "the given parameter doesn't change the default values");
+			assertEquals(max_hp, npc.getCurrHealth(), "the given parameter doesn't change the default values");
+			Character np = new Character(-1);
+			assertNotEquals(-1, np.getMaxHealth(), "there is something wrong with setMaxHealth");
+		}
+
 	}
-	
 	@Nested
 	@DisplayName("Testing the setMaxHealth Method")
 	class SetMaxHp
@@ -41,6 +58,7 @@ class CharacterTest
 			int hp_expected = 2;
 			npc.setMaxHealth(hp_expected);
 			assertEquals(hp_expected, npc.getMaxHealth());
+			assertEquals(hp_expected, npc.getCurrHealth());
 		}
 		
 		@Test
@@ -84,6 +102,9 @@ class CharacterTest
 	{
 		int new_attack = 20;
 		npc.setAttackValue(new_attack);
-		assertEquals(new_attack, npc.getAttackValue(), "setAttack doesn't work");
+		assertEquals(new_attack, npc.getAttackValue(), "setAttack doesn't work with positives");
+		int another_attack = -20;
+		npc.setAttackValue(another_attack);
+		assertEquals(-another_attack, npc.getAttackValue(), "setAttack doesn't work with negatives");
 	}
 }

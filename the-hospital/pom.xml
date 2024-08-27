@@ -4,7 +4,7 @@
   <artifactId>the-hospital</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Text Adventure Game</name>
-  
+  <description>A text adventure game set in a hospital </description>
   
    <properties>
        <maven.compiler.target>17</maven.compiler.target>
@@ -63,21 +63,7 @@
         	<artifactId>jackson-databind</artifactId>
         	<version>2.15.2</version>
    		</dependency>
-        <!-- Uncomment TestFX dependencies if UI testing is needed -->
-        <!--
-        <dependency>
-            <groupId>org.testfx</groupId>
-            <artifactId>testfx-core</artifactId>
-            <version>4.0.16-alpha</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testfx</groupId>
-            <artifactId>testfx-junit5</artifactId>
-            <version>4.0.16-alpha</version>
-            <scope>test</scope>
-        </dependency>
-        -->
+
     </dependencies>
 
     <repositories>
@@ -104,7 +90,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>hospial.GameUI</mainClass> <!-- Ensure this matches your entry point class -->
+                            <mainClass>hospial.GameUI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -116,9 +102,10 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
-                    <mainClass>hospital.GameUI</mainClass> <!-- Ensure this matches the maven-jar-plugin mainClass -->
+                    <mainClass>hospital.GameUI</mainClass>
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
 
