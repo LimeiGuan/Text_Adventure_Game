@@ -1,5 +1,5 @@
 package hospital;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * This class represents a default character, with attributes for stamina and damage
  */
@@ -8,14 +8,17 @@ public class Character
 	/**
      * The maximum health value of the character is set by default to 100.
      */
+	@JsonProperty("max_health")
 	protected int max_health = 100;
     /**
      * The current health value of the character.
      */
+	@JsonProperty("curr_health")
 	protected int curr_health;
     /**
      * The attack value of the character is set by default to 50.
      */
+	@JsonProperty("attack")
 	protected int attack = 50;
 
 	

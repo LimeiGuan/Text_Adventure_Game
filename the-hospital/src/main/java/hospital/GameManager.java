@@ -1,3 +1,5 @@
+package hospital;
+
 public class GameManager
 {
 	Player player = new Player();

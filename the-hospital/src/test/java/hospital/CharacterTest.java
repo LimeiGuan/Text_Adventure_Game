@@ -1,6 +1,6 @@
 package hospital;
 
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -16,12 +16,41 @@ class CharacterTest
 	
 	Character npc;
 	int max_hp = 200;
+	private final ObjectMapper objectMapper = new ObjectMapper();
 	
 	@BeforeEach
 	void setUp() throws Exception
 	{	npc = new Character(max_hp);
 	}
 	
+	@Nested
+	@DisplayName("Testing the serialization and deserialization")
+	class Jackson
+	{
+		@Test
+		@DisplayName("testing serializatoin")
+	    public void testSerialization() throws Exception {
+			npc.applyDamage(20);
+			int curr_hp = npc.getCurrHealth();
+			int dmg = npc.getAttackValue(); 
+	        String jsonString = objectMapper.writeValueAsString(npc);
+	        assertTrue(jsonString.contains("\"max_health\":"+ max_hp));
+	        assertTrue(jsonString.contains("\"curr_health\":" + curr_hp));
+	        assertTrue(jsonString.contains("\"attack\":" + dmg));
+	    }
+
+	    @Test
+	    @DisplayName("testing deserialization")
+	    public void testDeserialization() throws Exception {
+	        String jsonString = "{\"max_health\":120,\"curr_health\":120,\"attack\":60}";
+	        Character character = objectMapper.readValue(jsonString, Character.class);
+	        
+	        assertEquals(120, character.getMaxHealth());
+	        assertEquals(120, character.getCurrHealth());
+	        assertEquals(60, character.getAttackValue());
+	    }
+	}
+	 
 	@Nested
 	@DisplayName("Testing the constructors")
 	class Constructor
