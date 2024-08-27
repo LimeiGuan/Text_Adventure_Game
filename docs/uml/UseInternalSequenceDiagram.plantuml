@@ -2,10 +2,19 @@
 
 !theme materia-outline
 
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
 skinparam titleBorderColor #DC143C
 skinparam titleFontColor #DC143C
 
-title Use Internal Sequence Diagram
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+title Use - Internal Sequence Diagram
 
 
 
