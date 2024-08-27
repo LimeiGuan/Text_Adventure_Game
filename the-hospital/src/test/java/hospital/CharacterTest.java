@@ -29,7 +29,7 @@ class CharacterTest
 	{
 		@Test
 		@DisplayName("testing serializatoin")
-	    public void testSerialization() throws Exception {
+	    void testSerialization() throws Exception {
 			npc.applyDamage(20);
 			int curr_hp = npc.getCurrHealth();
 			int dmg = npc.getAttackValue(); 
@@ -41,7 +41,7 @@ class CharacterTest
 
 	    @Test
 	    @DisplayName("testing deserialization")
-	    public void testDeserialization() throws Exception {
+	    void testDeserialization() throws Exception {
 	        String jsonString = "{\"max_health\":120,\"curr_health\":120,\"attack\":60}";
 	        Character character = objectMapper.readValue(jsonString, Character.class);
 	        
