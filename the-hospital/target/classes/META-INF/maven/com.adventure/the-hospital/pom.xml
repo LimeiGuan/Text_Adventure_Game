@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.adventure</groupId>
+  <artifactId>the-hospital</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Text Adventure Game</name>
+  
+  
+   <properties>
+       <maven.compiler.target>17</maven.compiler.target>
+       <maven.compiler.source>17</maven.compiler.source>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       <junit.jupiter.version>5.10.0</junit.jupiter.version>
+       <javafx.version>21.0.4</javafx.version>
+       <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+
+    </properties>
+
+    <dependencies>
+    
+        <!-- AWS SDK per S3 -->
+    	<dependency>
+       		<groupId>software.amazon.awssdk</groupId>
+        	<artifactId>s3</artifactId>
+        	<version>2.20.4</version>
+    	</dependency>
+        
+        <!-- JUnit Jupiter dependencies for testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JavaFX dependencies -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+            <!-- Uncomment classifier for platform-specific builds -->
+            <!-- <classifier>${javafx.platform}</classifier> -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+            <!-- Uncomment classifier for platform-specific builds -->
+            <!-- <classifier>${javafx.platform}</classifier> -->
+        </dependency>
+
+		<!-- Jakcson -->
+	    <dependency>
+        	<groupId>com.fasterxml.jackson.core</groupId>
+        	<artifactId>jackson-databind</artifactId>
+        	<version>2.15.2</version>
+   		</dependency>
+        <!-- Uncomment TestFX dependencies if UI testing is needed -->
+        <!--
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-core</artifactId>
+            <version>4.0.16-alpha</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testfx</groupId>
+            <artifactId>testfx-junit5</artifactId>
+            <version>4.0.16-alpha</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+
+            <!-- Maven Jar Plugin for creating an executable JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>hospial.GameUI</mainClass> <!-- Ensure this matches your entry point class -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- JavaFX Maven Plugin for JavaFX applications -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>hospital.GameUI</mainClass> <!-- Ensure this matches the maven-jar-plugin mainClass -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
