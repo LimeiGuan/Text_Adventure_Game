@@ -37,22 +37,20 @@ object Item {
   description
   }
 
-object Room {
-  floor
-  roomNumber
-  roomName
+object Map {
+
   }
 
 
 Player "1" --> "1" Game: plays
 Player "1" --> "*" Enemy: fights
-Player "1" --> "*" Room: visits
+Player "1" --> "1" Map: explores
 Player "1" --> "1" Inventory: has
 Player "1" --> "*" Item: collects
 
-Game "1" --> "1" Room: has
-Item "*" --> "1" Room: present in
+Game "1" --> "1" Map: has
+Item "*" --> "1" Map: present in
 Inventory "1" --> "*" Item: carry
-Enemy "1" --> "1" Room: occupies
+Enemy "1" --> "1" Map: present in 
 
 @enduml
