@@ -33,23 +33,81 @@ class Enemy{
   +Enemy()
 }
 
-class GameUI{}
+class GameUI{
+  -gameManager: GameManager
+  -outputBox: TextArea
+  
+  +start()
+  +main()
+}
 
-class GameManager{}
+class GameManager{
+  -player: Player
+  
+  +commandControl()
+  +newGame()
+  +gameOver()
+  +room201()
+  +room202()
+  +room203()
+  +room101()
+  +room102()
+  +room103()
+  +hallway1()
+  +hallway2()
+  +controlRoom()
+  +morgue()
+  +lift()
+}
 
-class Inventory{}
+class Inventory{
+  -inventory: ArrayList<>
+  
+  +addItem()
+  +removeItem()
+  +searchItem()
+  +displayItem()
+}
 
-class Item{}
+class Item{
+  -id_counter: int
+  #id: int
+  #name: String
+  #description: String
+  
+  +Item()
+  +setDescription()
+  +getDescription()
+  +getName()
+  +getID()
+}
 
-class ItemEquipable{}
+class ItemEquipable{
+  #stats: int
+  
+  +ItemEquipable()
+  +setStats()
+  +getStats()
+}
 
-class ItemInteract{}
+class ItemInteract{
+  -display_message: String[]
+  
+  +setDisplay()
+  +Display()
+}
 
 class Medicine{}
 
-class Weapon{}
+class Weapon{
+  +Weapon()
+}
 
-class Room{}
+class Room{
+  -floor: int
+  -room: int
+  -roomName: String
+}
 
 Character <|-- Player : extends
 Character <|-- Enemy : extends
