@@ -55,10 +55,13 @@ class GameManager{
   +room103()
   +hallway1()
   +hallway2()
+  +mainhall()
   +controlRoom()
   +morgue()
   +lift()
 }
+
+class Save{}
 
 class Inventory{
   -inventory: ArrayList<>
