@@ -1,31 +1,57 @@
 @startuml DesignClassModel
 
-!theme materia-outline
-
-skinparam ArrowColor #DC143C
-skinparam BackgroundColor #FFFFFF
-
-skinparam ClassFontColor #DC143C
-skinparam ClassBackgroundColor #FFFFFF
-skinparam ClassBorderColor #DC143C
-
-skinparam titleBorderColor #DC143C
-skinparam titleFontColor #DC143C
-
 title Design Class Model
 
-class Player {}
+class Character{
+  #max_health: int
+  #curr_health: int
+  #attack: int
+  
+  +Character()
+  +applyDamage()
+  +setMaxHealth()
+  +setAttackValue()
+  +getCurrHealth()
+  +getMaxHealth()
+  +getAttackValue()
+}
 
-class Game{}
+class Player{
+  -buff: int
+  -curr_Position: Pair<>
+  -selected: boolean
+  
+  +Player()
+  +heal()
+  +equip()
+  +unequip()
+  +changePosition()
+  +getPosition()
+}
+
+class Enemy{
+  +Enemy()
+}
+
+class GameUI{}
+
+class GameManager{}
 
 class Inventory{}
 
-class Enemy{}
-
-class Map{}
-
 class Item{}
 
+class ItemEquipable{}
+
+class ItemInteract{}
+
+class Medicine{}
+
+class Weapon{}
+
 class Room{}
+
+    Character <|-- Player : extends
+    Character <|-- Enemy : extends
 
 @enduml
