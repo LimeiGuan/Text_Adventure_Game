@@ -14,7 +14,7 @@ skinparam ActorFontColor #DC143C
 skinparam ParticipantFontColor #DC143C
 skinparam ParticipantBorderColor #DC143C
 
-title Use - Internal Sequence Diagram
+title GameConfiguration - Internal Sequence Diagram
 
 
 
