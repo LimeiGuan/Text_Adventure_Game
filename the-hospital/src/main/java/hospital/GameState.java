@@ -30,7 +30,7 @@ public class GameState
     /**
      * Constructs a GameState instance with the specified file path for saving and loading data.
      * <p>
-     * Initializes the {@link ObjectMapper} and loads existing data from the specified file if it exists.
+     * Initializes the {@link ObjectMapper}
      * </p>
      * 
      * @param saveFilePath the path to the file where the game state will be saved and loaded from
@@ -40,7 +40,6 @@ public class GameState
         this.objectMapper = new ObjectMapper();
         this.saveFile = new File(saveFilePath);
         this.savedData = new HashMap<>();
-        load();   // Load data from file if it exists
     }
 
     /**
@@ -120,7 +119,8 @@ public class GameState
             {
                 savedData = objectMapper.readValue(saveFile, new TypeReference<Map<String, Object>>() {});
                 System.out.println("Game state loaded from " + saveFile.getPath());
-            } catch (IOException e) 
+            }
+            catch (IOException e) 
             {
                 System.err.println("Failed to load game state: " + e.getMessage());
             }
