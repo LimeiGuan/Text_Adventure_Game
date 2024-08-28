@@ -41,7 +41,7 @@ loop until the game is over
         Player -> Game : look around
         Game --> Player : list of items in the current room
 
-    else "enter <room name>" command
+    else "move <room name>" command
         Player -> Game : go into <room name>
         alt room locked
             Game --> Player : returns an error message
