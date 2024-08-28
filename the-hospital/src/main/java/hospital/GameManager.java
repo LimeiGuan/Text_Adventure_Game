@@ -12,7 +12,7 @@ public class GameManager
 	
 	public String commandControl(String input)
 	{
-		input.toLowerCase();
+		input = input.toLowerCase();
 		String[] splitInput = input.split(" ");
         String output = "";
         int operation;
@@ -117,7 +117,7 @@ public class GameManager
         		operation = 1;
         		target = splitInput[1];
         		if(splitInput.length == 3)
-        			target+=splitInput[2];
+        			target+= " "+splitInput[2];
         	}
         	else
         	{
