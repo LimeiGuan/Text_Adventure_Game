@@ -12,7 +12,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) 
 @DisplayName("Testing Equippable Items: Medicine and Weapon")
-
 class ItemEquippableTest
 {
 
@@ -24,6 +23,7 @@ class ItemEquippableTest
 	String des_potion = "restores your health, can be used only once";
 	String name_weapon = "sword";
 	String des_weapon =  "makes the enemies run away";
+	
 	@BeforeEach
 	void setUp() throws Exception
 	{	
