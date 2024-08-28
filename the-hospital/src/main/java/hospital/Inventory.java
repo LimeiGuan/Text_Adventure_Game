@@ -71,6 +71,23 @@ public class Inventory
 	}
 	
 	/**
+	 * Returns a string representation of an item descrition in the inventory.
+  
+	 * @param item the name of the item to search for (case-insensitive)
+	 * @return a  string of item description in the inventory. If not in the inventory, then [Item not avaible] is returned.
+	 */
+
+	public String printDescription(String item)
+	{
+		for(int i=0;i<inventory.size();i++)
+		{
+			if(inventory.get(i).getName().toLowerCase().equals(item))
+				return inventory.get(i).getDescription();
+		}
+		return "[Item not avaible]";
+	}
+
+	/**
 	 * Returns a string representation of all the item names in the inventory.
 	 *
 	 * @return a concatenated string of all item names in the inventory, separated by "+" characters. If the inventory is empty, an empty string is returned.
