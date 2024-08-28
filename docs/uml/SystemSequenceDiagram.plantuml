@@ -25,11 +25,9 @@ participant Game
 Game --> Player : Display the main screen
 
 alt "new game" command
-    Player -> Game : new Game
-    Game --> Player : asks for your name   
-    Player -> Game : reply
+    Player -> Game : new Game "name"
 else "load game" command 
-    Player -> Game : Load Game
+    Player -> Game : Load Game "name"
 end
 
 Game --> Player : Display game interface
