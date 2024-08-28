@@ -38,8 +38,8 @@ activate Inventory
 GameManager -> Inventory : searchItem(<item>)
 
 activate Item
-Inventory -> Item : getId(<item>)
-Item --> Inventory : return Id of the Item
+Inventory -> Item : getName(<item>)
+Item --> Inventory : return name
 
 Inventory -> Inventory : contains(<item>)
 activate Player
