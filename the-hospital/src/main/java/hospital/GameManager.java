@@ -14,7 +14,14 @@ public class GameManager
 	static boolean enemyFight = false;
 	static boolean questionFlag = false;
 	private static boolean endGame = true;
-	
+
+
+	/**
+	* Processes and executes player commands.
+	*
+	* @param input the command entered by the player
+	* @return the response based on the executed command
+	*/
 	public String commandControl(String input)
 	{
 		input = input.toLowerCase();
@@ -274,7 +281,12 @@ public class GameManager
     	
         return output;
     }
-	
+	/**
+     	* Starts a new game with the specified player name.
+     	*
+     	* @param target the name of the player
+     	* @return a description of the starting room
+     	*/
 	public static String newGame(String target)
 	{
 		endGame = false;
@@ -283,12 +295,25 @@ public class GameManager
 				+ "[Find a way out]\r\n"
 				+ "[You are in room 202]";
 	}
+	
+	/**
+	* Ends the game and displays a game over message.
+     	*
+     	* @return the game over message
+     	*/
 	public static String gameOver()
 	{
 		endGame = true;
 		return "Player has been eliminated! Game Over!!!";
 	}
-	
+
+	/**
+     	* Handles the interactions and actions in Room 201.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room201(int operation, String target)
 	{
 		switch(operation)
@@ -406,6 +431,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in Room 202.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room202(int operation, String target)
 	{
 		switch(operation)
@@ -497,6 +529,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in Room 203.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room203(int operation, String target)
 	{
 		switch(operation)
@@ -586,6 +625,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in Room 101.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room101(int operation, String target)
 	{
 		switch(operation)
@@ -682,6 +728,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in Room 102.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room102(int operation, String target)
 	{
 		switch(operation)
@@ -798,6 +851,14 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	
+	/**
+     	* Handles the interactions and actions in Room 103.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String room103(int operation, String target)
 	{		
 		switch(operation)
@@ -865,6 +926,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in mainhall.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public String mainhall(int operation, String target)
 	{
 		switch(operation)
@@ -894,6 +962,13 @@ public class GameManager
 		}
 		
 	}
+	/**
+     	* Handles the interactions and actions in hallway 1.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public String hallway1(int operation, String target)
 	{
 		switch(operation)
@@ -922,6 +997,13 @@ public class GameManager
 				return "Game error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in hallway 2.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String hallway2(int operation, String target)
 	{
 		switch(operation)
@@ -952,6 +1034,13 @@ public class GameManager
 				return "Game error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in morgue.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String morgue(int operation, String target)
 	{
 		switch(operation)
@@ -1036,6 +1125,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in control room.
+     	*
+     	* @param type of operation (2 for moving, 3 for attack)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public static String controlRoom(int operation, String target)
 	{
 		
@@ -1127,6 +1223,13 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions in lift.
+     	*
+     	* @param type of operation (0 for look around, 1 for interact, 2 for moving)
+     	* @param target item or entity to interact with
+     	* @return the response based on the action taken
+     	*/
 	public String lift(int operation, String target)
 	{
 		switch(operation)
@@ -1150,6 +1253,11 @@ public class GameManager
 				return "Game error!";
 		}
 	}
+	/**
+     	* Handles the interactions and actions with the exit.
+     	*
+     	* @return the response based on the action taken
+     	*/
 	public String exit(int operation, String target)
 	{
 		int position = player.getPosition();
@@ -1161,7 +1269,10 @@ public class GameManager
 			return "[The door is locked]";
 		}
 	}
-	
+	/**
+     	* Handles the items being used
+     	* @return the response based on the item used
+     	*/
 	public static String use(String target)
 	{
 		if(target.equals("scalpel"))
@@ -1207,17 +1318,31 @@ public class GameManager
 		
 		return inventory.printDescription(target);
 	}
-	
+	/**
+     	* Displays the items in the player's inventory.
+     	*
+     	* @return a list of items in the inventory
+     	*/
 	public String inventory()
 	{
 		return inventory.printAll();
 	}
-	
+
+	/**
+     	* Checks if the game has ended.
+     	*
+     	* @return true if the game has ended, false otherwise
+     	*/
 	public boolean getEndGame()
 	{
 		return endGame;
 	}
-	
+
+	/**
+     	* Displays the help menu with available commands.
+     	*
+     	* @return a list of available commands
+     	*/
 	public String help()
 	{
 		if(enemyFight)
@@ -1233,10 +1358,22 @@ public class GameManager
 				+ "LoadGame [save game name] -> load a new game\r\n"
 				+ "Inventory -> prints the inventory in the output";
 	}
+
+	/**
+     	* Loads a saved game.
+     	*
+     	* @return the result of the load operation
+     	*/
 	public String loadGame()
 	{
 		return "";
 	}
+	
+	/**
+     	* Saves the current game state.
+     	*
+     	* @return the result of the save operation
+     	*/
 	public String save()
 	{
 		if(enemyFight || questionFlag)
