@@ -41,17 +41,19 @@ public class Inventory
      * Removes an item from the inventory by its name.
      * 
      * @param item the name of the item to be removed (case-insensitive)
+     * @return true if the is found, false if not present
      */
-	public void removeItem(String item)
+	public boolean removeItem(String item)
 	{
 		for(int i=0;i<inventory.size();i++)
 		{
 			if(inventory.get(i).getName().toLowerCase().equals(item))
 			{
 				inventory.remove(inventory.get(i));
-				return ;
+				return true;
 			}
 		}
+		return false;
 	}
 	
     /**
