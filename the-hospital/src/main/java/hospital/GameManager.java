@@ -5,6 +5,8 @@ package hospital;
  * It manages the game state, processes player commands, and controls the 
  * game's flow.
  */
+import java.io.IOException;
+
 public class GameManager
 {
 	static Player player = new Player();
