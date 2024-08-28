@@ -34,7 +34,7 @@ class CharacterTest
 	        Character character = new Character();
 	        assertEquals(100, character.getMaxHealth());
 	        assertEquals(100, character.getCurrHealth());
-	        assertEquals(50, character.getAttackValue());
+	        assertEquals(10, character.getAttackValue());
 		}
 		
 		@Test
