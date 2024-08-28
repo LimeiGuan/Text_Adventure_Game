@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1489.5833px" preserveAspectRatio="none" style="width:1777px;height:1489px;background:#FFFFFF;" version="1.1" viewBox="0 0 1777 1489" width="1777.0833px" zoomAndPan="magnify"><defs><filter height="300%" id="f1cdxyei3lw73l" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0833333333333335"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.166666666666667" dy="4.166666666666667" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" height="57.5846" id="_title" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="423.9583" x="677.8646" y="20.8333"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="20.8333" font-weight="bold" lengthAdjust="spacing" textLength="390.625" x="694.5313" y="56.838">Use - Internal Sequence Diagram</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="1160.6445" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="286.9792" y="202.3438"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="1069.043" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="551.5625" y="243.9779"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="970.1497" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="760.9375" y="293.9453"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="920.1823" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="936.9792" y="343.9128"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="214.4206" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1111.9792" y="709.2773"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="137.4023" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1299.4792" y="923.6979"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="761.9466" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1478.125" y="502.1484"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="187.3698" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1651.5625" y="1061.1003"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="741.1133" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="1332.2917" x="427.6042" y="522.9818"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="531.901" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="1311.4583" x="438.0208" y="724.9023"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="43.75" x2="43.75" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="291.6667" x2="291.6667" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="556.7708" x2="556.7708" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="766.1458" x2="766.1458" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="942.1875" x2="942.1875" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="1117.1875" x2="1117.1875" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="1304.6875" x2="1304.6875" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="1482.8125" x2="1482.8125" y1="191.9271" y2="1381.7383"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="1656.7708" x2="1656.7708" y1="191.9271" y2="1381.7383"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="26.0417" y="178.5624">User</text><ellipse cx="44.2708" cy="99.2513" fill="none" filter="url(#f1cdxyei3lw73l)" rx="8.3333" ry="8.3333" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><path d="M44.2708,107.5846 L44.2708,135.7096 M30.7292,115.918 L57.8125,115.918 M44.2708,135.7096 L30.7292,151.3346 M44.2708,135.7096 L57.8125,151.3346 " fill="none" filter="url(#f1cdxyei3lw73l)" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="26.0417" y="1402.7161">User</text><ellipse cx="44.2708" cy="1425.4557" fill="none" filter="url(#f1cdxyei3lw73l)" rx="8.3333" ry="8.3333" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><path d="M44.2708,1433.7891 L44.2708,1461.9141 M30.7292,1442.1224 L57.8125,1442.1224 M44.2708,1461.9141 L30.7292,1477.5391 M44.2708,1461.9141 L57.8125,1477.5391 " fill="none" filter="url(#f1cdxyei3lw73l)" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="85.4167" x="247.9167" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="265.625" y="167.1041">GameUI</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="85.4167" x="247.9167" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="265.625" y="1410.0077">GameUI</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="130.2083" x="490.1042" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="94.7917" x="507.8125" y="167.1041">GameManager</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="130.2083" x="490.1042" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="94.7917" x="507.8125" y="1410.0077">GameManager</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="94.7917" x="717.1875" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="59.375" x="734.8958" y="167.1041">Inventory</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="94.7917" x="717.1875" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="59.375" x="734.8958" y="1410.0077">Inventory</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="63.5417" x="908.8542" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="28.125" x="926.5625" y="167.1041">Item</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="63.5417" x="908.8542" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="28.125" x="926.5625" y="1410.0077">Item</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="92.7083" x="1069.2708" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="57.2917" x="1086.9792" y="167.1041">Medicine</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="92.7083" x="1069.2708" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="57.2917" x="1086.9792" y="1410.0077">Medicine</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="88.5417" x="1258.8542" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="53.125" x="1276.5625" y="167.1041">Weapon</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="88.5417" x="1258.8542" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="53.125" x="1276.5625" y="1410.0077">Weapon</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="75" x="1444.2708" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="39.5833" x="1461.9792" y="167.1041">Player</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="75" x="1444.2708" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="39.5833" x="1461.9792" y="1410.0077">Player</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="78.125" x="1616.1458" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="42.7083" x="1633.8542" y="167.1041">Enemy</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="78.125" x="1616.1458" y="1380.6966"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="42.7083" x="1633.8542" y="1410.0077">Enemy</text><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="1160.6445" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="286.9792" y="202.3438"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="1069.043" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="551.5625" y="243.9779"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="970.1497" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="760.9375" y="293.9453"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="920.1823" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="936.9792" y="343.9128"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="214.4206" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1111.9792" y="709.2773"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="137.4023" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1299.4792" y="923.6979"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="761.9466" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1478.125" y="502.1484"/><rect fill="none" filter="url(#f1cdxyei3lw73l)" height="187.3698" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="1651.5625" y="1061.1003"/><polygon fill="#DC143C" points="274.4792,239.8112,284.8958,243.9779,274.4792,248.1445,278.6458,243.9779" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="44.2708" x2="280.7292" y1="243.9779" y2="243.9779"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="196.875" x="61.9792" y="228.5299">insert "use &lt;item&gt;" command</text><polygon fill="#DC143C" points="539.0625,289.7786,549.4792,293.9453,539.0625,298.112,543.2292,293.9453" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="297.3958" x2="545.3125" y1="293.9453" y2="293.9453"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="208.3333" x="315.1042" y="278.4973">commandControl("use &lt;item&gt;")</text><polygon fill="#DC143C" points="748.4375,339.7461,758.8542,343.9128,748.4375,348.0794,752.6042,343.9128" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="754.6875" y1="343.9128" y2="343.9128"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="132.2917" x="579.6875" y="328.4648">searchItem(&lt;item&gt;)</text><polygon fill="#DC143C" points="924.4792,389.7135,934.8958,393.8802,924.4792,398.0469,928.6458,393.8802" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="771.3542" x2="930.7292" y1="393.8802" y2="393.8802"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="118.75" x="789.0625" y="378.4322">getName(&lt;item&gt;)</text><polygon fill="#DC143C" points="782.8125,439.681,772.3958,443.8477,782.8125,448.0143,778.6458,443.8477" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="776.5625" x2="935.9375" y1="443.8477" y2="443.8477"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="81.25" x="799.4792" y="428.3997">return name</text><line style="stroke:#DC143C;stroke-width:3.125;" x1="771.3542" x2="820.3125" y1="488.6068" y2="488.6068"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="820.3125" x2="820.3125" y1="488.6068" y2="502.1484"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="777.6042" x2="820.3125" y1="502.1484" y2="502.1484"/><polygon fill="#DC143C" points="788.0208,497.9818,777.6042,502.1484,788.0208,506.3151,783.8542,502.1484" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="115.625" x="794.2708" y="473.1588">contains(&lt;item&gt;)</text><path d="M431.7708,522.9818 L515.1042,522.9818 L515.1042,550.0326 L504.6875,560.4492 L427.6042,560.4492 L427.6042,527.1484 A4.1667,4.1667 0 0 1 431.7708,522.9818 " fill="#FFFFFF" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><rect fill="none" height="741.1133" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="1332.2917" x="427.6042" y="522.9818"/><text fill="#9C27B0" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="19.7917" x="453.6458" y="546.0429">alt</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="134.375" x="541.1458" y="547.0846">[item not present]</text><polygon fill="#DC143C" points="573.4375,617.6758,563.0208,621.8424,573.4375,626.0091,569.2708,621.8424" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="567.1875" x2="759.8958" y1="621.8424" y2="621.8424"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="136.4583" x="590.1042" y="606.3944">return boolean False</text><line style="stroke:#DC143C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;" x1="427.6042" x2="1759.8958" y1="631.2174" y2="631.2174"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="105.2083" x="443.2292" y="653.2369">[item present]</text><polygon fill="#DC143C" points="573.4375,705.1107,563.0208,709.2773,573.4375,713.444,569.2708,709.2773" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="567.1875" x2="759.8958" y1="709.2773" y2="709.2773"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="131.25" x="590.1042" y="693.8293">return boolean True</text><path d="M442.1875,724.9023 L525.5208,724.9023 L525.5208,751.9531 L515.1042,762.3698 L438.0208,762.3698 L438.0208,729.069 A4.1667,4.1667 0 0 1 442.1875,724.9023 " fill="#FFFFFF" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><rect fill="none" height="531.901" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="1311.4583" x="438.0208" y="724.9023"/><text fill="#9C27B0" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="19.7917" x="464.0625" y="747.9635">alt</text><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="129.1667" x="551.5625" y="749.0051">[item is Medicine]</text><polygon fill="#DC143C" points="1099.4792,819.5964,1109.8958,823.763,1099.4792,827.9297,1103.6458,823.763" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="1105.7292" y1="823.763" y2="823.763"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="56.25" x="579.6875" y="808.315">use item</text><polygon fill="#DC143C" points="1465.625,869.5638,1476.0417,873.7305,1465.625,877.8971,1469.7917,873.7305" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="1122.3958" x2="1471.875" y1="873.7305" y2="873.7305"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="113.5417" x="1140.1042" y="858.2825">restore player HP</text><polygon fill="#DC143C" points="748.4375,919.5313,758.8542,923.6979,748.4375,927.8646,752.6042,923.6979" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="754.6875" y1="923.6979" y2="923.6979"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="135.4167" x="579.6875" y="908.2499">removeItem(&lt;item&gt;)</text><line style="stroke:#DC143C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;" x1="438.0208" x2="1749.4792" y1="933.0729" y2="933.0729"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="125" x="453.6458" y="955.0924">[item is Weapon]</text><polygon fill="#DC143C" points="1286.9792,1006.9661,1297.3958,1011.1328,1286.9792,1015.2995,1291.1458,1011.1328" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="1293.2292" y1="1011.1328" y2="1011.1328"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="56.25" x="579.6875" y="995.6848">use item</text><polygon fill="#DC143C" points="1465.625,1056.9336,1476.0417,1061.1003,1465.625,1065.2669,1469.7917,1061.1003" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="1304.6875" x2="1471.875" y1="1061.1003" y2="1061.1003"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="93.75" x="1322.3958" y="1045.6523">buff player atk</text><line style="stroke:#DC143C;stroke-width:1.0416666666666667;stroke-dasharray:2.0,2.0;" x1="438.0208" x2="1749.4792" y1="1070.4753" y2="1070.4753"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="98.9583" x="453.6458" y="1092.4947">[special item]</text><polygon fill="#DC143C" points="924.4792,1144.3685,934.8958,1148.5352,924.4792,1152.7018,928.6458,1148.5352" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="930.7292" y1="1148.5352" y2="1148.5352"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="56.25" x="579.6875" y="1133.0872">use item</text><polygon fill="#DC143C" points="1639.0625,1194.3359,1649.4792,1198.5026,1639.0625,1202.6693,1643.2292,1198.5026" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="947.3958" x2="1645.3125" y1="1198.5026" y2="1198.5026"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="155.2083" x="965.1042" y="1183.0546">enemy HP drops to zero</text><polygon fill="#DC143C" points="748.4375,1244.3034,758.8542,1248.4701,748.4375,1252.6367,752.6042,1248.4701" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="561.9792" x2="754.6875" y1="1248.4701" y2="1248.4701"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="135.4167" x="579.6875" y="1233.0221">removeItem(&lt;item&gt;)</text><polygon fill="#DC143C" points="308.8542,1308.8542,298.4375,1313.0208,308.8542,1317.1875,304.6875,1313.0208" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="302.6042" x2="555.7292" y1="1313.0208" y2="1313.0208"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="104.1667" x="325.5208" y="1297.5728">return message</text><polygon fill="#DC143C" points="55.7292,1358.8216,45.3125,1362.9883,55.7292,1367.1549,51.5625,1362.9883" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="49.4792" x2="291.1458" y1="1362.9883" y2="1362.9883"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="108.3333" x="72.3958" y="1347.5403">display message</text><!--MD5=[b8bebc6626f750fc0d07911c508b197b]
+@startuml
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+skinparam SequenceGroupBorderColor #DC143C
+
+title Use - Internal Sequence Diagram
+
+actor User
+participant GameUI
+participant GameManager
+participant Inventory
+participant Item
+participant Medicine
+participant Weapon
+participant Player
+participant Enemy
+
+activate GameUI
+User -> GameUI : insert "use <item>" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("use <item>")
+
+activate Inventory
+GameManager -> Inventory : searchItem(<item>)
+
+activate Item
+Inventory -> Item : getName(<item>)
+Item - -> Inventory : return name
+
+Inventory -> Inventory : contains(<item>)
+activate Player
+
+  alt item not present
+    Inventory - -> GameManager : return boolean False
+
+  else item present
+    Inventory - -> GameManager : return boolean True
+
+    alt item is Medicine
+      activate Medicine
+      GameManager -> Medicine : use item
+      Medicine -> Player : restore player HP
+      GameManager -> Inventory : removeItem(<item>)
+      deactivate Medicine
+
+    else item is Weapon
+      activate Weapon
+      GameManager -> Weapon : use item
+      Weapon -> Player : buff player atk
+      deactivate Weapon
+
+    else special item
+      activate Enemy
+      GameManager -> Item : use item
+      Item -> Enemy : enemy HP drops to zero
+      GameManager -> Inventory : removeItem(<item>)
+      deactivate Enemy
+    
+    end
+
+    deactivate Player
+    deactivate Item
+    deactivate Inventory
+
+  end
+
+
+GameManager - -> GameUI : return message
+deactivate GameManager
+GameUI - -> User : display message 
+deactivate GameUI
+@enduml
+
+@startuml
+
+
+
+skinparam backgroundColor transparent
+skinparam useBetaStyle false
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor transparent
+    FontColor #2196F3
+    HyperLinkColor #fd7e14
+    LineColor #1a78c2
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+   Padding 15
+   roundcorner 20
+   BackgroundColor transparent
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #fff
+    FontColor #9C27B0
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #222
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #222
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  transparent
+	FontColor #2196F3
+	BorderColor #fff
+  }
+  nwdiagDiagram {
+	network {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent    
+		LineColor #2196F3
+		LineThickness 1.0
+		FontColor #1a78c2
+	}
+	server {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	}
+	arrow {
+		FontColor #1a78c2
+		LineColor #1a78c2
+	}
+	group {
+		BackGroundColor #fff
+		LineColor $LIGHT_DARK
+		LineThickness 2.0
+		Margin 5
+		Padding 5
+	}
+  }
+  ganttDiagram {
+	task {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+		LineColor #2196F3
+		Margin 10
+		Padding 6
+	}
+	note {
+		FontColor #9C27B0
+		LineColor #7D1F8D
+		BackGroundColor transparent
+	}
+	separator {
+		LineColor #cccccc
+		BackGroundColor transparent
+		FontColor #cccccc
+	}
+	milestone {
+		FontColor #9C27B0
+		FontSize 16
+		FontStyle italic
+		BackGroundColor #fff
+		LineColor #cccccc
+	}
+	timeline {
+		BackgroundColor #fff
+		FontColor #cccccc
+	}
+	closed {
+		BackgroundColor #CC7A00
+		FontColor #ff9800
+	}
+  }
+</style>
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               10 
+skinparam TitleFontColor	    #222
+skinparam TitleFontSize	    	20
+skinparam TitleBorderThickness 	0
+skinparam ArrowColor            #666
+skinparam stereotype {
+    CBackgroundColor #fff
+    CBorderColor #cccccc
+    ABackgroundColor #70bf73
+    ABorderColor #3D8C40
+    IBackgroundColor #B7161C
+    IBorderColor $DANGER_DARK
+    EBackgroundColor #ffad33
+    EBorderColor #CC7A00
+    NBackgroundColor #b052c0
+    NBorderColor #7D1F8D
+}
+skinparam title {
+	FontColor	                 #2196F3
+	BorderColor	                 #cccccc
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor              transparent
+}
+
+skinparam legend {
+	BackgroundColor transparent
+	BorderColor #cccccc
+	FontColor #222
+}
+
+skinparam swimlane {
+	BorderColor #9C27B0
+	BorderThickness 2
+	TitleBackgroundColor  #fff-#fff
+	TitleFontColor #2196F3
+}
+
+
+skinparam activity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BarColor #4CAF50
+	StartColor #9C27B0
+	EndColor #9C27B0
+	DiamondBackgroundColor transparent
+  	DiamondBorderColor #cccccc
+	DiamondFontColor #cccccc
+}
+
+
+skinparam participant {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	ParticipantBorderThickness 2
+}
+
+
+skinparam actor {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam arrow {
+	Thickness 3
+	Color #2196F3
+	FontColor #222
+}
+
+
+skinparam sequence {
+	BorderColor #2196F3
+	TitleFontColor #2196F3
+	BackgroundColor transparent
+	StartColor #2196F3
+	EndColor #2196F3
+	BoxBackgroundColor transparent
+	BoxBorderColor #666
+	BoxFontColor #222
+	DelayFontColor #222
+	LifeLineBorderColor #cccccc
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor transparent
+	GroupBorderColor #666
+	GroupFontColor #222
+	GroupHeaderFontColor #9C27B0
+	DividerBackgroundColor transparent
+    DividerBorderColor #666
+    DividerBorderThickness 2
+    DividerFontColor #222
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #666
+	ReferenceFontColor #222
+	ReferenceHeaderFontColor #9C27B0
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam partition {
+	BorderColor #2196F3
+	FontColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam collections {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam control {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam entity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam boundary {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam agent {
+	BackgroundColor transparent
+	BorderColor #999999
+	FontColor #333333
+}
+
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam artifact {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+}
+
+
+skinparam component {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam interface {
+	BackgroundColor  transparent
+	BorderColor  #e51c23
+	FontColor #222
+}
+
+
+skinparam storage {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+}
+
+
+skinparam node {
+	BackgroundColor transparent
+	BorderColor #222
+	FontColor #222
+}
+
+
+skinparam cloud {
+	BackgroundColor #F2FCFE-#eeeeee
+	BorderColor #F2FCFE
+	FontColor #222
+}
+
+
+skinparam database {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam class {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	FontColor #fff
+	HeaderBackgroundColor #2196F3-#1a78c2
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #222
+	AttributeFontSize 11
+}
+
+
+skinparam object {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam usecase {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam rectangle {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam package {
+	BackgroundColor transparent
+  	BorderColor #2196F3
+	FontColor #2196F3
+	BorderThickness 2
+}
+
+
+skinparam folder {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+	BorderThickness 2
+}
+
+
+skinparam frame {
+	BackgroundColor transparent
+  	BorderColor #9C27B0
+	FontColor #9C27B0
+	BorderThickness 2
+}
+
+
+skinparam state {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StartColor #9C27B0
+	EndColor #9C27B0
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam queue {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam card {
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam file {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+
+}
+
+
+skinparam stack {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+skinparam SequenceGroupBorderColor #DC143C
+
+title Use - Internal Sequence Diagram
+
+actor User
+participant GameUI
+participant GameManager
+participant Inventory
+participant Item
+participant Medicine
+participant Weapon
+participant Player
+participant Enemy
+
+activate GameUI
+User -> GameUI : insert "use <item>" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("use <item>")
+
+activate Inventory
+GameManager -> Inventory : searchItem(<item>)
+
+activate Item
+Inventory -> Item : getName(<item>)
+Item - -> Inventory : return name
+
+Inventory -> Inventory : contains(<item>)
+activate Player
+
+  alt item not present
+    Inventory - -> GameManager : return boolean False
+
+  else item present
+    Inventory - -> GameManager : return boolean True
+
+    alt item is Medicine
+      activate Medicine
+      GameManager -> Medicine : use item
+      Medicine -> Player : restore player HP
+      GameManager -> Inventory : removeItem(<item>)
+      deactivate Medicine
+
+    else item is Weapon
+      activate Weapon
+      GameManager -> Weapon : use item
+      Weapon -> Player : buff player atk
+      deactivate Weapon
+
+    else special item
+      activate Enemy
+      GameManager -> Item : use item
+      Item -> Enemy : enemy HP drops to zero
+      GameManager -> Inventory : removeItem(<item>)
+      deactivate Enemy
+    
+    end
+
+    deactivate Player
+    deactivate Item
+    deactivate Inventory
+
+  end
+
+
+GameManager - -> GameUI : return message
+deactivate GameManager
+GameUI - -> User : display message 
+deactivate GameUI
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
