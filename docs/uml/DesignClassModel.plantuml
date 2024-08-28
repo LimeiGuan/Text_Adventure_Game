@@ -11,23 +11,31 @@ class Character{
   +applyDamage()
   +setMaxHealth()
   +setAttackValue()
+  +setCurrHealth()
   +getCurrHealth()
   +getMaxHealth()
   +getAttackValue()
 }
 
 class Player{
+  -playerId: String
+  -name: String
   -buff: int
-  -curr_Position: Pair<>
+  -curr_Position: int
   -selected: boolean
   
   +Player()
   +heal()
   +equip()
   +unequip()
+  +isEquiped()
   +changePosition()
   +getPosition()
   +setPosition()
+  +getPlayerId()
+  -setPlayerId()
+  +getName()
+  
 }
 
 class Enemy{
@@ -44,6 +52,7 @@ class GameUI{
 
 class GameManager{
   -player: Player
+  -map: Map
   
   +commandControl()
   +newGame()
@@ -60,22 +69,34 @@ class GameManager{
   +controlRoom()
   +morgue()
   +lift()
+  +use()
+  +attack()
+  +inventory()
 }
 
-class GameSaveService{}
+class GameSaveServices{
+  -s3: S3Client
+  -bucketName: String
+  
+  +GameSaveService()
+  +saveGame()
+  +loadGame()
+  +deleteGame()
+  +loadGameAsObject()
+}
+
+class GameState{
+}
 
 class Inventory{
-  -inventory: ArrayList<>
+  -inventory: ArrayList<Item>
   
   +addItem()
   +removeItem()
   +searchItem()
-  +displayItem()
 }
 
 class Item{
-  -id_counter: int
-  #id: int
   #name: String
   #description: String
   
@@ -83,7 +104,6 @@ class Item{
   +setDescription()
   +getDescription()
   +getName()
-  +getID()
 }
 
 class ItemEquipable{
@@ -101,16 +121,23 @@ class ItemInteract{
   +Display()
 }
 
-class Medicine{}
+class Medicine{
+  +Medicine()
+  +useMedicine()
+}
 
 class Weapon{
   +Weapon()
 }
 
-class Room{
-  -floor: int
-  -room: int
-  -roomName: String
+class Map{
+  #itemFlag: List<Boolean>
+  -rooms: Room[]
+  
+  +Map()
+  +Room()
+  +setflag()
+  +getFlag()
 }
 
 Character <|-- Player : extends
@@ -119,18 +146,20 @@ Character <|-- Enemy : extends
 Item <|-- ItemEquipable : extends
 Item <|-- ItemInteract : extends
 Item"0...*" <|-- "1"Inventory : contains
-item"0...*" <|-- "1"Room : has
+item"n" <|-- "1"Map : has
 
 ItemEquipable <|-- Weapon: extends
 ItemEquipable <|-- Medicine: extends
 
 Player"1" --|> "0...*"Item : uses 
 Player"1" --|> "1"Inventory : has
-Player"1" --|> "1"Room : located
+Player"1" --|> "1"Map : explores
 
 GameManager"1" --|> "1"Player : creates
 GameManager"1" --|> "n"Enemy : creates
 GameManager"1" <|--|> "1"GameUI : uses
-GameManager"1" --|> "n"Room : creates
+GameManager"1" --|> "1"Map : creates
+GameManager"1" --|> "1"GameSaveServices : uses
+GameSaveServices"1" --|> "1"GameState : uses
 
 @enduml
