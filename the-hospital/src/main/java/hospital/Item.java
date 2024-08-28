@@ -13,8 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 	)
 	@JsonSubTypes
 	({
-	    @JsonSubTypes.Type(value = ItemInteract.class, name = "item_interact"),
-	    @JsonSubTypes.Type(value = ItemEquipable.class, name = "item_equipable"),
+	    @JsonSubTypes.Type(value = ItemEquippable.class, name = "item_equippable"),
 	    @JsonSubTypes.Type(value = Weapon.class, name = "weapon"),
 	    @JsonSubTypes.Type(value = Medicine.class, name = "medicine")
 	})
