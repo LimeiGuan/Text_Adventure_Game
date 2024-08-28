@@ -65,7 +65,7 @@ public class GameUI extends Application
         imageView.setFitWidth(500);
         imageView.setFitHeight(300);
         // Temp Image
-        Image image = new Image("https://via.placeholder.com/500x300");
+        Image image = new Image("Background.png");
         imageView.setImage(image);
 
         VBox imageBox = new VBox(imageView);
