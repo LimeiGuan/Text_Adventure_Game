@@ -201,7 +201,7 @@ public class GameManager
         										return save();
         									else
         										if(splitInput[0].equals("loadGame"))
-            										return loadGame();
+            										return loadGame(splitInput[1]);
         										else
         											return "[Command not avaible]";
         						}
@@ -1367,13 +1367,14 @@ public class GameManager
 	/**
      	* Loads a saved game.
      	*
+      	* @param name of the save to load
      	* @return the result of the load operation
      	*/
-	public String loadGame()
+	public String loadGame(String target)
 	{
 		try
 		{
-			gameState = gameSaveServices.loadGame(player.getName());
+			gameState = gameSaveServices.loadGame(target);
 			map = gameState.load("map", Map.class);
 			player = gameState.load("player", Player.class);
 			inventory = gameState.load("inventory", Inventory.class);
