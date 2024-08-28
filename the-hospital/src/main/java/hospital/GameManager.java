@@ -7,6 +7,8 @@ public class GameManager
 	static Enemy monster;
 	static Inventory inventory = new Inventory();
 	static boolean enemyFight = false;
+	static boolean questionFlag = false;
+	private static boolean endGame = false;
 	
 	public String commandControl(String input)
 	{
@@ -18,7 +20,13 @@ public class GameManager
         if(splitInput[0].equals("move"))
         {
         	if(enemyFight)
-        		return "Not avaible during combat";
+        		return "[Not avaible during combat]";
+        	if(questionFlag)
+				return "[Not avaible right now]";
+        	if(splitInput[1].equals("exit"))
+        		output = exit(2, "");
+        	else
+        	{
         	if(splitInput[1].equals("hallway2"))
         		output = hallway2(2, "");
         	else
@@ -88,14 +96,14 @@ public class GameManager
 	            		}
 	            		default:
 	            		{
-	            			output = "No such room!";
+	            			output = "[No such room]";
 	            			break;
 	            		}
 	            	}
     			}
     			else
-    				output = "No such room!";
-    		}}}}}}
+    				output = "[No such room]";
+    		}}}}}}}
         }
         else
         {
@@ -103,7 +111,9 @@ public class GameManager
         	if(splitInput[0].equals("interact"))
         	{
         		if(enemyFight)
-            		return "Not avaible during combat";
+            		return "[Not avaible during combat]";
+        		if(questionFlag)
+					return "[Not avaible right now]";
         		operation = 1;
         		target = splitInput[1];
         		if(splitInput.length == 3)
@@ -114,7 +124,9 @@ public class GameManager
         		if(input.equals("look around"))
         		{
         			if(enemyFight)
-                		return "Not avaible during combat";
+                		return "[Not avaible during combat]";
+        			if(questionFlag)
+    					return "[Not avaible right now]";
         			operation = 0;
         		}
         		else
@@ -122,7 +134,9 @@ public class GameManager
         			if(splitInput[0].equals("attack"))
         			{
         				if(!enemyFight)
-        					return "You are not in a combat.";
+        					return "[You are not in a combat]";
+        				if(questionFlag)
+        					return "[Not avaible right now]";
         				operation = 3;
         				target = "attack";
         			}
@@ -130,17 +144,36 @@ public class GameManager
         			{
         				if(splitInput[0].equals("use"))
         				{
-        					if(enemyFight)
+        					if(!questionFlag)
         					{
-        						operation = 3;
-        						target = splitInput[1];
+        						if(enemyFight)
+            					{
+            						operation = 3;
+            						target = splitInput[1];
+            					}
+            					else
+            						return use(splitInput[1]);
         					}
         					else
-        						return use(splitInput[1]);
+        						return "[Not avaible right now]";
         				}
         				else
-        					return "Game Error";
-        				//Sistemo gli altri comandi
+        				{
+        					if(splitInput[0].equals("I'm") && questionFlag)
+        					{
+        						operation = 3;
+        						if(splitInput.length == 1)
+        							target = "";
+        						if(splitInput.length == 2)
+        							target = splitInput[1];
+        						if(splitInput.length == 3)
+        		        			target = splitInput[1] + " " + splitInput[2];
+        					}
+        					else
+            					return "Game Error";
+        					//Sistemo gli altri comandi
+        				}
+        				
         			}        			
         		}
         	}
@@ -323,7 +356,7 @@ public class GameManager
 			{
 				if(target.equals("attack"))
 				{
-					if(monster.applyDamage(operation))
+					if(monster.applyDamage(player.getAttackValue()))
 					{
 						inventory.addItem(new Medicine("Bandage","[A bandage. You can use it to recover HP. Heal 15 Hp]",15));
 						map.setFlag(1, 2);
@@ -333,7 +366,7 @@ public class GameManager
 					}
 					else 
 					{
-						if(player.applyDamage(operation))
+						if(player.applyDamage(monster.getAttackValue()))
 							return gameOver();
 						else
 							return "The enemy health is : " + monster.getCurrHealth();
@@ -426,11 +459,11 @@ public class GameManager
 			{
 				int position = player.getPosition();
 				if(position != 200)
-					return "No such room";
+					return "[No such room]";
 				else
 				{
 					player.setPosition(202);
-					return "You are now in Room 202";
+					return "[You are now in Room 202]";
 				}
 			}
 			default:
@@ -503,7 +536,7 @@ public class GameManager
 			{
 				if(target.equals("attack"))
 				{
-					if(monster.applyDamage(operation))
+					if(monster.applyDamage(player.getAttackValue()))
 					{
 						inventory.addItem(new Medicine("Bandage","[A bandage. You can use it to recover HP. Heal 15 Hp]",15));
 						map.setFlag(2, 0);
@@ -513,10 +546,10 @@ public class GameManager
 					}
 					else 
 					{
-						if(player.applyDamage(operation))
+						if(player.applyDamage(monster.getAttackValue()))
 							return gameOver();
 						else
-							return "The enemy health is : " + monster.getCurrHealth();
+							return "[The enemy health is : " + monster.getCurrHealth() + " ]";
 					}
 				}
 				else
@@ -532,10 +565,22 @@ public class GameManager
 		{
 			case 0:
 			{
-				String lookAround = "Eyes";
+				String lookAround = "Eyes\n";
 				if(map.getFlag(3, 1))
-					lookAround += "\nTable";
+					lookAround += "Table";
 				return lookAround;
+			}
+			case 1:
+			{
+				if(target.equals("eyes"))
+					return "[The eyes are still staring at you]";
+				if(target.equals("table") && map.getFlag(3, 1))
+				{
+					map.setFlag(3, 1);
+					inventory.addItem(new Item("Glue","It's effective against a certain type of monster"));
+					return "[You find some glue]\r\n"
+							+ "[It's effective against a certain type of monster]";
+				}
 			}
 			case 2:
 			{
@@ -544,25 +589,66 @@ public class GameManager
 					return "No such room";
 				else
 				{
-					boolean key = false;
-					if(key)
+					player.setPosition(101);
+					if(map.getFlag(3, 0))
 					{
-						return "[The door seems to be locked, try to find something to unlock the door]";
+						enemyFight = true;
+						monster = new Enemy(125);
+						monster.setAttackValue(10);
+						return "[You enter Room 101]\r\n"
+								+ "[The shelfs are full of collections of eyes.]\r\n"
+								+ "[You admit that they are pretty, but at the same time creepy.]\r\n"
+								+ "[Suddenly the sound of glass shattering catches your attention.]\r\n"
+								+ "[A monster made of many eyes is ready to attack you.]\r\n"
+								+ "“KILL THE MONSTER”";
 					}
 					else
+						return "[You are now in Room 101]";
+				}
+			}
+			case 3:
+			{
+				if(target.equals("attack"))
+				{
+					if(monster.applyDamage(player.getAttackValue()))
 					{
-						player.setPosition(101);
-						if(map.getFlag(3, 0))
+						inventory.addItem(new Item("Key room102","Key to unlock room 102"));
+						inventory.addItem(new Medicine("Ban aid","[A band aid. You can use it to recover HP. Heal 20 Hp]",20));
+						map.setFlag(3, 0);
+						enemyFight = false;
+						return "[The monster dropped something.]\r\n"
+								+ "[A band aid]\r\n"
+								+ "[Key n° 102]";
+					}
+					else 
+					{
+						if(player.applyDamage(monster.getAttackValue()))
+							return gameOver();
+						else
+							return "[The enemy health is : " + monster.getCurrHealth() + " ]";
+					}
+				}
+				else
+				{
+					if(target.equals("pepper spray"))
+					{
+						if(inventory.searchItem("pepper spray"))
 						{
-							return "[The shelfs are full of collections of eyes.]\r\n"
-									+ "[You admit that they are pretty, but at the same time creepy.]\r\n"
-									+ "[Suddenly the sound of glass shattering catches your attention.]\r\n"
-									+ "[A monster made of many eyes is ready to attack you.]\r\n"
-									+ "“KILL THE MONSTER”";
+							monster.applyDamage(999);
+							use(target);
+							inventory.addItem(new Item("Key room102","Key to unlock room 102"));
+							inventory.addItem(new Medicine("Ban aid","[A band aid. You can use it to recover HP. Heal 20 Hp]",20));
+							map.setFlag(3, 0);
+							enemyFight = false;
+							return "[The monster dropped something.]\r\n"
+									+ "[A band aid]\r\n"
+									+ "[Key n° 102]";
 						}
 						else
-							return "You are now in Room 101";
+							return "[Item not found]";
 					}
+					else
+						return use(target);
 				}
 			}
 			default:
@@ -575,11 +661,11 @@ public class GameManager
 		{
 			case 0:
 			{
-				String lookAround = "Walls";
+				String lookAround = "Walls\n";
 				if(map.getFlag(4, 1))
-					lookAround += "\nDrawers";
+					lookAround += "Drawers\n";
 				if(map.getFlag(4, 2))
-					lookAround += "\nCupboard";
+					lookAround += "Cupboard";
 				return lookAround;
 			}
 			case 1:
@@ -595,11 +681,16 @@ public class GameManager
 				}
 				if(target.equals("Drawers") && map.getFlag(4, 1))
 				{
+					map.setFlag(4, 1);
+					inventory.addItem(new Medicine("Syringe","It has the same liquid in the IV stand. Heal 25 Hp",25));
+					inventory.addItem(new Medicine("Syringe","It has the same liquid in the IV stand. Heal 25 Hp",25));
 					return "[You find other syringes]";
 				}
 				if(target.equals("Cupboard") && map.getFlag(4, 2))
 				{
-					return "[You find some matches and VERY FLAMMABLE alcohol]";
+					map.setFlag(4, 2);
+					inventory.addItem(new Item("Matches","Could be useful"));
+					return "[You find some a box of matches]";
 				}
 				return "[No such target]";
 			}
@@ -610,9 +701,7 @@ public class GameManager
 					return "No such room";
 				else
 				{
-					//Controllo se c'è la chiave
-					boolean key = false;
-					if(key)
+					if(!inventory.searchItem("key room102"))
 					{
 						return "[The door seems to be locked, try to find something to unlock the door]";
 					}
@@ -621,72 +710,78 @@ public class GameManager
 						player.setPosition(102);
 						if(map.getFlag(4, 0))
 						{
-							return "enemy-[You enter Room 102.]\r\n"
+							enemyFight = true;
+							monster = new Enemy(50);
+							monster.setAttackValue(35);
+							return "[You enter Room 102.]\r\n"
 									+ "[The walls are covered with handprints.]\r\n"
 									+ "[As you slowly inspect the wall, you realize it is blood.]\r\n"
 									+ "[Many hands try to grab you, but you dodge in time.]\r\n"
 									+ "“KILL THE MONSTER”";
 						}
 						else
-							return "You are now in Room 102";
+							return "[You are now in Room 102]";
 					}
 				}
 			}
 			case 3:
 			{
-				if(map.getFlag(4, 0))
+				if(target.equals("attack"))
 				{
-					if(target.equals("attack"))
+					if(monster.applyDamage(player.getAttackValue()))
 					{
-						if(monster.applyDamage(operation))
-						{
-							//Aggiungo chiave 103
-							map.setFlag(4, 0);
-							return "[They dropped something]";
-						}
-						else 
-						{
-							if(player.applyDamage(operation))
-								return gameOver();
-							else return "The enemy health is : " + monster.getCurrHealth();
-						}
+						inventory.addItem(new Item("Key room103","Key to unlock room 103"));
+						map.setFlag(4, 0);
+						enemyFight = false;
+						return "[They dropped something]\r\n"
+								+ "[Key room number 103]";
 					}
-					else
+					else 
 					{
-						if(target.equals("glue"))
-						{
-							//Se uso la colla insta kill
-							//Controllo se ho nell'intenventario la glue
-							monster.applyDamage(999);
-							use(target);
-							//Aggiungo chiave
-							map.setFlag(4, 0);
-							return "[You use the glue and the hands get stuck together.]\r\n"
-									+ "[Unable to move, they surrender and disappear.]\r\n"
-									+ "[They dropped something]\r\n";
-						}
+						if(player.applyDamage(monster.getAttackValue()))
+							return gameOver();
 						else
-							use(target);
+							return "[The enemy health is : " + monster.getCurrHealth() + " ]";
 					}
 				}
 				else
-					return "No enemy in the room";
+				{
+					if(target.equals("glue"))
+					{
+						if(inventory.searchItem("glue"))
+						{
+							monster.applyDamage(999);
+							use(target);
+							inventory.addItem(new Item("Key room103","Key to unlock room 103"));
+							map.setFlag(4, 0);
+							enemyFight = false;
+							return "[You use the glue and the hands get stuck together.]\r\n"
+									+ "[Unable to move, they surrender and disappear.]\r\n"
+									+ "[They dropped something]\r\n"
+									+ "[Key room number 103]";
+						}
+						else
+							return "[Item not found]";
+					}
+					else
+						return use(target);
+				}
 			}
 			default:
 				return "Game Error!";
 		}
 	}
-	public String room103(int operation, String target)
+	public static String room103(int operation, String target)
 	{		
 		switch(operation)
 		{
 			case 0:
 			{
-				return "The room is dark. The lone figure has apperently left";
+				return "[The room is dark. The lone figure has apperently left]";
 			}
 			case 1:
 			{
-				return "Nothing to interact in this room";
+				return "[Nothing to interact in this room]";
 			}
 			case 2:
 			{
@@ -695,9 +790,49 @@ public class GameManager
 					return "No such room";
 				else
 				{
-					player.setPosition(103);
-					return "You are now in Room 103";
+					if(!inventory.searchItem("key room103"))
+						return "[The door seems to be locked, try to find something to unlock the door]";
+					else
+					{
+						player.setPosition(103);
+						if(map.getFlag(5, 0))
+							return "[You are now in Room 103]";
+						else
+						{
+							questionFlag = true;
+							return "[You enter Room 103.]\r\n"
+									+ "[The room is dark, but you can see a lone figure in the corner.]\r\n"
+									+ "[He is facing you, but you can’t see his face.]\r\n"
+									+ "[It suddenly speak to you]\r\n"
+									+ "[“Who are you?”]\r\n\n"
+									+ "[Possible answers: ]\r\n"
+									+ "[I'm "+player.getName()+"]\r\n"
+									+ "[I'm student]\r\n"
+									+ "[I'm human being]\r\n"
+									+ "[I'm consciousness]\r\n"
+									+ "[I'm]";
+						}
+					}
 				}
+			}
+			case 3:
+			{
+				if(target.equals(player.getName()))
+					return "[“This is not who you are, that is only what you are called”]";
+				if(target.equals("student"))
+					return "[“That is what you do, not who you are”]";
+				if(target.equals("human being"))
+					return "[“That is only your species, not who you are”]";
+				if(target.equals("consciousness"))
+					return "[“That is merely what you are, not who you are”]\r\n";
+				if(target.equals(""))
+				{
+					questionFlag = false;
+					map.setFlag(5, 0);
+					inventory.addItem(new Item("Key groundLift","Key to operate the lift to the ground floor"));
+					return "[You obtain the key card elevator for ground floor]";
+				}
+				return "[The lone being seems to not understand you]";
 			}
 			default:
 				return "Game Error!";
@@ -705,24 +840,59 @@ public class GameManager
 	}
 	public String mainhall(int operation, String target)
 	{
-		int position = player.getPosition();
-		if(position != 999 && position != 3 && position != 2 && position != 1)
-			return "No such room!";
-		else
+		switch(operation)
 		{
-			player.setPosition(0);
-			return "You are now in the Main Hall";
+			case 0:
+				return "[The main hall seems empty. You can see the exit door]";
+			case 1:
+				return "[Nothing to interact]";
+			case 2:
+			{
+				int position = player.getPosition();
+				if(position != 999 && position != 3 && position != 2 && position != 1)
+					return "[No such room]";
+				else
+				{
+					if(inventory.searchItem("key groundlift"))
+					{
+						player.setPosition(0);
+						return "[You are now in the main hall]";
+					}
+					else
+						return "[The lift require a key to go to the ground floor]";
+				}
+			}
+			default:
+				return "Game error!";
 		}
+		
 	}
 	public String hallway1(int operation, String target)
 	{
-		int position = player.getPosition();
-		if(position != 999 && position != 103 && position != 102 && position != 101)
-			return "No such room!";
-		else
+		switch(operation)
 		{
-			player.setPosition(100);
-			return "You are now in the Hallway of Floor 1";
+			case 0:
+				return "[The hallway seems empty. Only faint light coming from the rooms are visible]";
+			case 1:
+				return "[Nothing to interact]";
+			case 2:
+			{
+				int position = player.getPosition();
+				if(position != 999 && position != 103 && position != 102 && position != 101)
+					return "[No such room]";
+				else
+				{
+					if(inventory.searchItem("key lift"))
+					{
+						player.setPosition(100);
+						return "[You are now in the Hallway of Floor 1]";
+					}
+					else
+						return "[The lift require a key to go to the first floor]";
+				}
+			}
+			default:
+				return "Game error!";
 		}
 	}
 	public static String hallway2(int operation, String target)
@@ -732,7 +902,7 @@ public class GameManager
 			case 0:
 				return "[The hallway seems empty. Only faint light coming from the rooms are visible]";
 			case 1:
-				return "[No item to interact]";
+				return "[Nothing to interact]";
 			case 2:
 			{
 				int position = player.getPosition();
@@ -752,76 +922,217 @@ public class GameManager
 				}
 			}
 			default:
-				return "[Game error]";
+				return "Game error!";
 		}
 	}
-	public String morgue(int operation, String target)
+	public static String morgue(int operation, String target)
 	{
 		switch(operation)
 		{
 			case 0:
 			{
-				return "Only ashes remain";
+				return "[Only ashes remain]";
 			}
 			case 1:
 			{
-				return "Nothing to interact in this room";
+				return "[Nothing to interact in this room]";
 			}
 			case 2:
 			{
 				int position = player.getPosition();
 				if(position != 0)
-					return "No such room";
+					return "[No such room]";
 				else
 				{
 					player.setPosition(1);
-					return "You are now in the Morgue";
+					if(map.getFlag(6, 0))
+					{
+					enemyFight = true;
+					monster = new Enemy(player.curr_health);
+					monster.setAttackValue(player.getAttackValue());
+					return "[You enter the Morgue.]\r\n"
+							+ "[It’s really cold.]\r\n"
+							+ "[There is a corpse on the table.]\r\n"
+							+ "[You come closer to inspect the body.]\r\n"
+							+ "[It’s “you”]\r\n"
+							+ "[A sense of anguish overcomes you, as you fail to notice the body slowly rising.]\r\n"
+							+ "[It looks at you and tries to snatch your neck.]\r\n"
+							+ "“KILL THE MONSTER”\r\n"
+							+ "[The room looks like it's covered in gasoline]";
+					}
+					else
+						return "[You are now in the morgue]";
+				}
+			}
+			case 3:
+			{
+				if(target.equals("attack"))
+				{
+					if(monster.applyDamage(player.getAttackValue()))
+					{
+						inventory.addItem(new Item("Key staircase","Key to unlock the control room"));
+						map.setFlag(6, 0);
+						enemyFight = false;
+						return "[They dropped something]\r\n"
+								+ "[Key staircase]";
+					}
+					else 
+					{
+						if(player.applyDamage(monster.attack))
+							return gameOver();
+						else
+							return "[The enemy health is : " + monster.getCurrHealth() + " ]";
+					}
+				}
+				else
+				{
+					if(target.equals("matches"))
+					{
+						if(inventory.searchItem("matches"))
+						{
+							monster.applyDamage(999);
+							use(target);
+							inventory.addItem(new Item("Key staircase","Key to unlock the control room"));
+							map.setFlag(6, 0);
+							enemyFight = false;
+							return "[As last resort you set the monster on fire and close the door behind]\r\n"
+									+ "[After some time, you enter the room and find only ashes of the monster and the key to the staircase.]\r\n";
+						}
+						else
+							return "[Item not found]";
+					}
+					else
+						return use(target);
 				}
 			}
 			default:
 				return "Game Error!";
 		}
 	}
-	public String controlRoom(int operation, String target)
+	public static String controlRoom(int operation, String target)
 	{
 		
 		switch(operation)
 		{
-			case 0:
-			{
-				return "All the monitors seem to be destroyed or not working";
-			}
-			case 1:
-			{
-				return "Nothing to interact in this room";
-			}
 			case 2:
 			{
 				int position = player.getPosition();
 				if(position != 0)
-					return "No such room";
+					return "[No such room]";
 				else
 				{
-					player.setPosition(3);
-					return "You are now in the Control Room";
+					
+					if(inventory.searchItem("key staircase"))
+					{
+						enemyFight = true;
+						monster = new Enemy(100);
+						monster.setAttackValue(25);
+						player.setPosition(3);
+						return "[You take the starway and reach the control room.]\r\n"
+								+ "[As you enter the room, you see many monitors on.]\r\n"
+								+ "[All the monitors display your actions in the many rooms.]\r\n"
+								+ "[Someone was monitoring your every move.]\r\n"
+								+ "[Creeped by the situation, you feel the urgency to find the key to the exit.]\r\n"
+								+ "[As soon as you try to leave the room, a strange figure appears behind you.]";
+					}
+					else
+						return "[The door seems to be locked, try to find something to unlock the door]";
+				}
+			}
+			case 3:
+			{
+				if(target.equals("attack"))
+				{
+					if(monster.applyDamage(player.getAttackValue()))
+					{
+						map.setFlag(7, 0);
+						enemyFight = false;
+						endGame = true;
+						return "[It dropped something on the ground.]\r\n"
+								+"[You got the key to the exit]"
+								+ "[The sound of the key unlocking the exit door makes you feel relieved.]\r\n"
+								+ "[The door opens and finally you can breathe the air from outside.]\r\n"
+								+ "[As you step outside, some kind of invisible wall makes you unable to leave.]\r\n"
+								+ "[The truth hits you.]\r\n"
+								+ "[This is a simulation.]\r\n"
+								+ "[You are going to wake up soon.]\r\n"
+								+ "[To the real world.]";
+					}
+					else 
+					{
+						if(player.applyDamage(monster.attack))
+							return gameOver();
+						else
+							return "[The enemy health is : " + monster.getCurrHealth() + " ]";
+					}
+				}
+				else
+				{
+					if(target.equals("syringe"))
+					{
+						if(inventory.searchItem("syringe"))
+						{
+							monster.applyDamage(999);
+							inventory.removeItem("syringe");
+							map.setFlag(7, 0);
+							enemyFight = false;
+							endGame = true;
+							return "[The monster screams as it disappears.]\r\n"
+									+ "[It dropped something on the ground.]\r\n"
+									+ "[You got the key to the exit]"
+									+ "[The sound of the key unlocking the exit door makes you feel relieved.]\r\n"
+									+ "[The door opens and finally you can breathe the air from outside.]\r\n"
+									+ "[As you step outside, some kind of invisible wall makes you unable to leave.]\r\n"
+									+ "[The truth hits you.]\r\n"
+									+ "[This is a simulation.]\r\n"
+									+ "[You are going to wake up soon.]\r\n"
+									+ "[To the real world.]";
+							
+						}
+						else
+							return "[Item not found]";
+					}
+					else
+						return use(target);
 				}
 			}
 			default:
 				return "Game Error!";
 		}
 	}
-	
 	public String lift(int operation, String target)
+	{
+		switch(operation)
+		{
+			case 0:
+				return "[The lift is somehow still working]";
+			case 1:
+				return "[Nothing to interact]";
+			case 2:
+			{
+				int position = player.getPosition();
+				if(position != 200 && position != 100 && position != 0)
+					return "[No such room]";
+				else
+				{
+					player.setPosition(999);
+					return "[You are now in the lift]";
+				}
+			}
+			default:
+				return "Game error!";
+		}
+	}
+	public String exit(int operation, String target)
 	{
 		int position = player.getPosition();
 		if(position != 200 && position != 100 && position != 0)
-			return "No such room!";
+			return "[No such room]";
 		else
 		{
 			player.setPosition(999);
-			return "You are now in the lift";
+			return "[The door is locked]";
 		}
-			
 	}
 	
 	public static String use(String target)
@@ -830,9 +1141,13 @@ public class GameManager
 		return "";
 	}
 	
-	public void inventory()
+	public String inventory()
 	{
-		
+		return inventory.printAll();
 	}
 	
+	public boolean getEndGame()
+	{
+		return endGame;
+	}
 }
