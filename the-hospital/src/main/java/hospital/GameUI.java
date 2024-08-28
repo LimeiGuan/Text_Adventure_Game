@@ -18,22 +18,34 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+/**
+ * The GameUI class represents the user interface for the game application.
+ * It extends the JavaFX Application class to set up and display the game's main window.
+ * The UI includes a health bar, an image, a map, an inventory area, an output area, and an input field.
+ */
 public class GameUI extends Application
 {
-	private GameManager gameManager; // Declare the GameManager
-	private TextArea outputBox; // Declare the outputBox at the class level
+	/** Instance of GameManager to handle game logic*/
+	private GameManager gameManager;
+	/**TextArea for displaying output*/
+	private TextArea outputBox;
 
+    /**
+     * Initializes and starts the JavaFX application.
+     * 
+     * @param primaryStage the primary stage for this application, onto which the application scene will be set
+     */
     @Override
     public void start(Stage primaryStage)
     {
-    	gameManager = new GameManager(); // Initialize the GameManager
+    	//Initialize the GameManager
+    	gameManager = new GameManager();
     	
-        // Create the label
+        //Create and configure the HP label and health bar
         Label hpLabel = new Label("HP");
-        hpLabel.setFont(Font.font("Arial", 14)); // Set font size
-        hpLabel.setStyle("-fx-font-weight: bold;"); // Apply bold style
+        hpLabel.setFont(Font.font("Arial", 14)); 
+        hpLabel.setStyle("-fx-font-weight: bold;");
 
-        // Create the health bar
         ProgressBar healthBar = new ProgressBar(0.75);
         healthBar.getStyleClass().add("red-progress-bar");
         healthBar.setPrefWidth(100);
@@ -43,11 +55,12 @@ public class GameUI extends Application
         healthBox.setAlignment(Pos.CENTER_LEFT);
         healthBox.setPadding(new Insets(0, 0, 0, 25)); // Adjust left padding to align with image box
 
+        //Configure the image view
         ImageView imageView = new ImageView();
         imageView.setFitWidth(500);
         imageView.setFitHeight(300);
         //Temp Image
-        Image image = new Image("https://via.placeholder.com/500x300");
+        Image image = new Image("https://metro.co.uk/wp-content/uploads/2019/12/jackson-reacts-to-jyp-and-hwasa-at-mama-2019.png?crop=0px%2C23px%2C1200px%2C631px&resize=1200%2C630");
         imageView.setImage(image);
 
         VBox imageBox = new VBox(imageView);
@@ -58,13 +71,12 @@ public class GameUI extends Application
         VBox leftBox = new VBox(0, healthBox, imageBox); // Set spacing to 0
         leftBox.setAlignment(Pos.TOP_LEFT);
 
-        // Create the map box
+        //Configure the map and inventory text areas
         TextArea mapBox = new TextArea("Map will be here");
         mapBox.setPrefRowCount(5);
         mapBox.setEditable(false);
         mapBox.setMaxWidth(200); // Set the maximum width for the map box
 
-        // Create the inventory box
         TextArea inventoryBox = new TextArea("Inventory will be here");
         inventoryBox.setPrefRowCount(5);
         inventoryBox.setEditable(false);
@@ -77,6 +89,7 @@ public class GameUI extends Application
         VBox.setVgrow(mapBox, Priority.ALWAYS);
         VBox.setVgrow(inventoryBox, Priority.ALWAYS);
 
+        //Configure the output and input fields
         outputBox = new TextArea("Output will be displayed here.");
         outputBox.setPrefRowCount(2);
         outputBox.setEditable(false);
@@ -127,6 +140,11 @@ public class GameUI extends Application
         primaryStage.show();
     }
 
+    /**
+     * Launches the JavaFX application.
+     * 
+     * @param args command-line arguments passed to the application
+     */
     public static void main(String[] args) {
         launch(args);
     }
