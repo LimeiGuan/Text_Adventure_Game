@@ -51,11 +51,7 @@ loop until the game is over
 
     else "interact <item>" command
         Player -> Game : interact with <item>
-        Game --> Player : description of item
-    
-    else "pick <item>" command
-        Player -> Game : pick up the item
-        Game --> Player : item is added in the inventory
+        Game --> Player : pick up the item
 
     else "use <item>" command
         Player -> Game : use item in the inventory
