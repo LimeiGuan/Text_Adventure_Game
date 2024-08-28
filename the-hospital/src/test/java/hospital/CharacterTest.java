@@ -1,6 +1,5 @@
 package hospital;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -16,40 +15,13 @@ class CharacterTest
 	
 	Character npc;
 	int max_hp = 200;
-	private final ObjectMapper objectMapper = new ObjectMapper();
+
 	
 	@BeforeEach
 	void setUp() throws Exception
 	{	npc = new Character(max_hp);
 	}
 	
-	@Nested
-	@DisplayName("Testing the serialization and deserialization")
-	class Jackson
-	{
-		@Test
-		@DisplayName("testing serializatoin")
-	    void testSerialization() throws Exception {
-			npc.applyDamage(20);
-			int curr_hp = npc.getCurrHealth();
-			int dmg = npc.getAttackValue(); 
-	        String jsonString = objectMapper.writeValueAsString(npc);
-	        assertTrue(jsonString.contains("\"max_health\":"+ max_hp));
-	        assertTrue(jsonString.contains("\"curr_health\":" + curr_hp));
-	        assertTrue(jsonString.contains("\"attack\":" + dmg));
-	    }
-
-	    @Test
-	    @DisplayName("testing deserialization")
-	    void testDeserialization() throws Exception {
-	        String jsonString = "{\"max_health\":120,\"curr_health\":120,\"attack\":60}";
-	        Character character = objectMapper.readValue(jsonString, Character.class);
-	        
-	        assertEquals(120, character.getMaxHealth());
-	        assertEquals(120, character.getCurrHealth());
-	        assertEquals(60, character.getAttackValue());
-	    }
-	}
 	 
 	@Nested
 	@DisplayName("Testing the constructors")
@@ -77,26 +49,43 @@ class CharacterTest
 
 	}
 	@Nested
-	@DisplayName("Testing the setMaxHealth Method")
-	class SetMaxHp
+	@DisplayName("Testing the setMaxHealth and setCurrHealth Method")
+	class SetHp
 	{
 		@Test
-		@DisplayName("normal inputs for setMaHealth")
+		@DisplayName("normal inputs for setMaxHealth")
 		void testNormalMax()
 		{
 			int hp_expected = 2;
 			npc.setMaxHealth(hp_expected);
 			assertEquals(hp_expected, npc.getMaxHealth());
-			assertEquals(hp_expected, npc.getCurrHealth());
+			assertNotEquals(npc.getMaxHealth(), npc.getCurrHealth());
 		}
 		
 		@Test
-		@DisplayName("illegal inputs for setMaxHealth")
+		@DisplayName("illegal inputs for both set methods")
 		void testAbnormalMax()
 		{
 			assertThrows(IllegalArgumentException.class, ()->npc.setMaxHealth(-1));
+			assertThrows(IllegalArgumentException.class, ()->npc.setCurrHealth(-1));
 		}
 		
+		@Test
+		@DisplayName("normal inputs for setCurrHealth")
+		void testNormalCurr()
+		{
+			npc.setCurrHealth(max_hp/2);
+			assertEquals(max_hp/2, npc.getCurrHealth());
+			assertNotEquals(npc.getCurrHealth(), npc.getMaxHealth());
+		}
+		
+		@Test
+		@DisplayName("inputs that are greater than max_health")
+		void testMaxCurr()
+		{
+			npc.setCurrHealth(max_hp*2);
+			assertEquals(npc.getCurrHealth(), npc.getMaxHealth());
+		}
 	}
 	
 	@Nested

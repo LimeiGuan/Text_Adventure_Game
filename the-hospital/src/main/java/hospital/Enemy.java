@@ -1,5 +1,6 @@
 package hospital;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
@@ -27,7 +28,7 @@ public class Enemy extends Character
      *
      * @param hp The maximum health for the enemy. Must be a positive integer.
      */
-	public Enemy(int hp)
+	public Enemy(@JsonProperty("max_health") int hp)
 	{	super(hp);
 	}
 
