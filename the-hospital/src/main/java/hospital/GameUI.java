@@ -38,15 +38,21 @@ public class GameUI extends Application
     @Override
     public void start(Stage primaryStage)
     {
-    	//Initialize the GameManager
-    	gameManager = new GameManager();
-    	
-        //Create and configure the HP label and health bar
-        Label hpLabel = new Label("HP");
-        hpLabel.setFont(Font.font("Arial", 14)); 
-        hpLabel.setStyle("-fx-font-weight: bold;");
+        gameManager = new GameManager(); // Initialize the GameManager
 
-        ProgressBar healthBar = new ProgressBar(0.75);
+        // Load the images for the map
+        Image image1 = new Image("floor1.png");
+        Image image2 = new Image("floor2.png");
+        Image image3 = new Image("groundfloor.png");
+        Image image4 = new Image("lift.png");
+
+        // Create the label
+        Label hpLabel = new Label("HP");
+        hpLabel.setFont(Font.font("Arial", 14)); // Set font size
+        hpLabel.setStyle("-fx-font-weight: bold;"); // Apply bold style
+
+        // Create the health bar
+        ProgressBar healthBar = new ProgressBar(1);
         healthBar.getStyleClass().add("red-progress-bar");
         healthBar.setPrefWidth(100);
 
@@ -55,12 +61,11 @@ public class GameUI extends Application
         healthBox.setAlignment(Pos.CENTER_LEFT);
         healthBox.setPadding(new Insets(0, 0, 0, 25)); // Adjust left padding to align with image box
 
-        //Configure the image view
         ImageView imageView = new ImageView();
         imageView.setFitWidth(500);
         imageView.setFitHeight(300);
-        //Temp Image
-        Image image = new Image("https://metro.co.uk/wp-content/uploads/2019/12/jackson-reacts-to-jyp-and-hwasa-at-mama-2019.png?crop=0px%2C23px%2C1200px%2C631px&resize=1200%2C630");
+        // Temp Image
+        Image image = new Image("https://via.placeholder.com/500x300");
         imageView.setImage(image);
 
         VBox imageBox = new VBox(imageView);
@@ -71,26 +76,30 @@ public class GameUI extends Application
         VBox leftBox = new VBox(0, healthBox, imageBox); // Set spacing to 0
         leftBox.setAlignment(Pos.TOP_LEFT);
 
-        //Configure the map and inventory text areas
-        TextArea mapBox = new TextArea("Map will be here");
-        mapBox.setPrefRowCount(5);
-        mapBox.setEditable(false);
-        mapBox.setMaxWidth(200); // Set the maximum width for the map box
+        // Create the map box using an ImageView
+        mapImageView = new ImageView();
+        mapImageView.setFitWidth(200); // Set width of the map box
+        mapImageView.setFitHeight(200); // Set height of the map box
+        mapImageView.setPreserveRatio(false); // Do not preserve aspect ratio
 
-        TextArea inventoryBox = new TextArea("Inventory will be here");
+        // Create a VBox to enforce the height of the map box
+        VBox mapBoxContainer = new VBox(mapImageView);
+        mapBoxContainer.setPrefSize(200, 200); // Set preferred size of the container to 200x200 pixels
+        mapBoxContainer.setMinSize(200, 200); // Ensure minimum size is 200x200
+        mapBoxContainer.setMaxSize(200, 200); // Ensure maximum size is 200x200
+
+        // Create the inventory box
+        TextArea inventoryBox = new TextArea("Inventory:");
         inventoryBox.setPrefRowCount(5);
         inventoryBox.setEditable(false);
         inventoryBox.setMaxWidth(200); // Set the maximum width for the inventory box
 
         // Combine the map box and inventory box into a VBox
-        VBox rightBox = new VBox(10, mapBox, inventoryBox);
+        VBox rightBox = new VBox(10, mapBoxContainer, inventoryBox);
         rightBox.setPadding(new Insets(10));
         rightBox.setAlignment(Pos.TOP_RIGHT); // Align to the top right
-        VBox.setVgrow(mapBox, Priority.ALWAYS);
-        VBox.setVgrow(inventoryBox, Priority.ALWAYS);
 
-        //Configure the output and input fields
-        outputBox = new TextArea("Output will be displayed here.");
+        outputBox = new TextArea("Write NewGame [player name] to start a new game!");
         outputBox.setPrefRowCount(2);
         outputBox.setEditable(false);
         outputBox.setMaxWidth(Double.MAX_VALUE);
@@ -99,14 +108,68 @@ public class GameUI extends Application
         TextField inputField = new TextField();
         inputField.setPromptText("Enter your input here");
         inputField.setMaxWidth(Double.MAX_VALUE);
-        
+
+        updateMapBox(999);
+
         // Handle the input submission
         inputField.setOnAction(e -> {
             String userInput = inputField.getText();
-            String input = gameManager.commandControl(userInput); // Get the reversed string from GameManager
-            outputBox.clear(); // Clear the previous content of the outputBox
-            outputBox.appendText(input); // Display the new reversed string in the outputBox
+
+            if (userInput.toLowerCase().equals("exit"))
+            {
+                primaryStage.close(); // Close the application
+                return; // Exit the handler to prevent further processing
+            }
+
+            String[] temp = userInput.split(" ");
+            boolean stop = false;
+
+            if (temp[0].toLowerCase().equals("newgame"))
+            {
+                stop = false;
+                gameManager = new GameManager();
+            }
+            else
+            {
+                if (gameManager.getEndGame())
+                {
+                    outputBox.clear();
+                    outputBox.appendText("Write NewGame [player name] to start a new game!");
+                    stop = true;
+                }
+            }
+
+            if (!stop)
+            {
+                String input = gameManager.commandControl(userInput); // Get the reversed string from GameManager
+                if(temp[0].toLowerCase().equals("inventory"))
+                {
+                	String outsplit = "";
+                	outsplit = gameManager.inventory().replace("+", "\n");
+                	outputBox.clear();
+                    outputBox.appendText("Inventory:\n"+outsplit);
+                }
+                else
+                {
+                	outputBox.clear(); // Clear the previous content of the outputBox
+                    outputBox.appendText(input); // Display the new string in the outputBox
+                }
+            }
+
             inputField.clear(); // Clear the input field after submission
+
+            // Example of how to update the map based on a value
+            if(!gameManager.getEndGame())
+            	updateMapBox(gameManager.player.getPosition()); // Replace with the actual value to be checked
+            
+            if(!gameManager.getEndGame())
+            {
+            	String outsplit = "";
+            	outsplit = gameManager.inventory().replace("+", "\n");
+            	inventoryBox.setText("Inventory:\n"+outsplit);
+            	
+            	healthBar.setProgress((float)gameManager.player.getCurrHealth()/100);
+            }
         });
 
 
@@ -133,11 +196,36 @@ public class GameUI extends Application
 
         // Create and set the scene with fixed width and height
         Scene scene = new Scene(root, 800, 500);
-        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm()); // Load CSS
-        primaryStage.setTitle("Game UI Example");
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm()); // Load CSS
+        primaryStage.setTitle("The Hospital");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false); // Make the stage non-resizable
         primaryStage.show();
+    }
+
+	/**
+     * Updates the map image based on the given value.
+     *
+     * @param value the value to check for determining which image to display
+     */
+    private void updateMapBox(int value)
+    {
+        if (value >= 200 && value <= 203)
+        {
+            mapImageView.setImage(new Image("floor2.png"));
+        }
+        else if (value >= 100 && value <= 103)
+        {
+            mapImageView.setImage(new Image("floor1.png"));
+        }
+        else if (value >= 0 && value <= 3)
+        {
+            mapImageView.setImage(new Image("groundfloor.png"));
+        }
+        else if (value == 999)
+        {
+            mapImageView.setImage(new Image("lift.png"));
+        }
     }
 
     /**
