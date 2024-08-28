@@ -1369,11 +1369,18 @@ public class GameManager
      	*/
 	public String loadGame()
 	{
-		gameState = gameSaveServices.loadGame(player.getName());
-		map = gameState.load("map", Map.class);
-		player = gameState.load("player", Player.class);
-		inventory = gameState.load("inventory", Inventory.class);
-		return "[Load successful]";
+		try
+		{
+			gameState = gameSaveServices.loadGame(player.getName());
+			map = gameState.load("map", Map.class);
+			player = gameState.load("player", Player.class);
+			inventory = gameState.load("inventory", Inventory.class);
+			return "[Load successful]";
+		}
+		catch (IOException e)
+		{
+			return "[Error while loading]";
+		}
 	}
 	
 	/**
