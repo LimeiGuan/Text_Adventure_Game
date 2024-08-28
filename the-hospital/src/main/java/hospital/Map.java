@@ -69,7 +69,10 @@ public class Map
 		rooms[0].itemFlag.add(true);
 		rooms[0].itemFlag.add(true);
 		
-		//Room 201 -> 1 item, 1 enemy
+		//Room 201 -> 2 items, 1 enemy, 1 item
+		
+		rooms[1].itemFlag.add(true);
+		rooms[1].itemFlag.add(true);
 		rooms[1].itemFlag.add(true);
 		rooms[1].itemFlag.add(true);
 		
