@@ -146,7 +146,7 @@ Character <|-- Enemy : extends
 Item <|-- ItemEquipable : extends
 Item <|-- ItemInteract : extends
 Item"0...*" <|-- "1"Inventory : contains
-item"n" <|-- "1"Map : has
+Item"n" <|-- "1"Map : has
 
 ItemEquipable <|-- Weapon: extends
 ItemEquipable <|-- Medicine: extends
