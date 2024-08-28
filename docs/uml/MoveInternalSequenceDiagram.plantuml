@@ -1,4 +1,4 @@
-@startuml EnterInternalSequenceDiagram
+@startuml MoveInternalSequenceDiagram
 
 !theme materia-outline
 
@@ -32,14 +32,18 @@ GameUI -> GameManager : commandControl("move")
 activate Player
 GameManager -> Player : getposition()
 Player --> GameManager : return the position of the Player
-  alt the room is locked || room not available
-    GameManager -> GameManager : room move operation
+GameManager -> GameManager : room move operation
+  alt room not available
     GameManager --> GameUI : return "No such room"
-    GameUI --> User : display message
-  else the room is unlocked && room available
-    GameManager -> GameManager : room move operation
+  else room locked
+    GameManager --> GameUI : return "The room is locked"
+  else the room is unlocked && available
+    GameManager -> Player : setPosition(<room>)
+    deactivate Player
     GameManager --> GameUI : return "You are now in <room>"
-    GameUI --> User : display message
   end
+deactivate GameManager
+GameUI --> User : display message
+  deactivate GameUI
 
 @enduml
