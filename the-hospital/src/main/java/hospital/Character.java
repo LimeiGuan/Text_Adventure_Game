@@ -66,11 +66,16 @@ public class Character
      *
      * @param damageAmount	The amount of damage to apply. The damageAmount will always reduce 
      * 						the current health of the character, unless it is 0. 0 does nothing.
+     * @return {@code true} if the player has the health equal or lesser than 0, {@code false} otherwise.
      */
-	public void applyDamage(int damageAmount)
+	public boolean applyDamage(int damageAmount)
 	{
 		if(damageAmount < 0) curr_health += damageAmount;
 		else if(damageAmount > 0) curr_health -= damageAmount;
+		 if (curr_health <= 0) 
+		      return true; 
+		     else  
+		      return false; 
 	}
 
     /**

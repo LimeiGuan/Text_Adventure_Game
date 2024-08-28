@@ -32,19 +32,5 @@ public class Enemy extends Character
 	{	super(hp);
 	}
 
-    /**
-     * Applies damage to the enemy. If the current health drops to 0 or below, a message is printed to
-     * indicate that the battle has ended.
-     *
-     * @param damageAmount The amount of damage to apply.The damageAmount will always reduce 
-     * 						the current health of the enemy, unless it is 0. 0 does nothing.
-     */
-	@Override
-	public void applyDamage(int damageAmount)
-	{
-		super.applyDamage(damageAmount);
-	    if (curr_health <= 0)
-	    	System.out.println("Battle ended!");
-	}
 	
 }
