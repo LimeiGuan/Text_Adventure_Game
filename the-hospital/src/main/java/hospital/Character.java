@@ -33,7 +33,7 @@ public class Character
     /**
      * The attack value of the character is set by default to 50.
      */
-	protected int attack = 50;
+	protected int attack = 10;
 
 	
     /**
