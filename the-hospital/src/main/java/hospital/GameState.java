@@ -58,6 +58,21 @@ public class GameState
     	persist();  // Update the file
     }
 
+    
+    /**
+     * Save multiple object with only a function
+     * 
+     * @param map object that contain all the flags
+     * @param basic information of the player
+     * @param items of inventory
+     */
+    public void updateProgress(Map map, Player player, Inventory inventory)
+    {
+        save("map", map);
+        save("player", player);
+        save("inventory", inventory);
+    }
+    
     /**
      * Loads a value from the game state associated with the specified key and converts it to the specified type.
      * <p>
