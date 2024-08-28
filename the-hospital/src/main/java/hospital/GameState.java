@@ -65,7 +65,7 @@ public class GameState
      * @param basic information of the player
      * @param items of inventory
      */
-    public void updateProgress(Map map, Player player, Inventory inventory)
+    public void updateProgress(hospital.Map map, Player player, Inventory inventory)
     {
         save("map", map);
         save("player", player);
