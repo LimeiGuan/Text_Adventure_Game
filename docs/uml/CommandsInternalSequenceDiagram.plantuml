@@ -14,7 +14,7 @@ skinparam ActorFontColor #DC143C
 skinparam ParticipantFontColor #DC143C
 skinparam ParticipantBorderColor #DC143C
 
-title Move - Internal Sequence Diagram
+title Commands - Internal Sequence Diagram
 
 
 
