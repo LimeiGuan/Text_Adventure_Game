@@ -111,7 +111,14 @@ class CharacterTest
 			assertEquals(max_hp+dmg, npc.getCurrHealth());
 		}
 		
-		
+		@Test
+		@DisplayName("damage > cur_health")
+		void testGameOver()
+		{
+			assertFalse(npc.applyDamage(max_hp/2));
+			assertTrue(npc.applyDamage(max_hp*2));
+			
+		}
 	}
 
 	@Test

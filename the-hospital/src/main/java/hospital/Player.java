@@ -112,21 +112,6 @@ public class Player extends Character
 	{	return selected;
 	}
 	
-    /**
-     * Applies damage to the player, reducing their current health.
-     * If the player's health drops to zero or below, the game ends.
-     *
-     * @param damageAmount	The amount of damage to apply. Both positive and negative
-     * 						values decrease health.
-     */
-	@Override
-	public void applyDamage(int damageAmount)
-	{
-	    super.applyDamage(damageAmount);
-	    if (curr_health <= 0)
-	    	GameManager.gameOver();
-	}
-	
 	
     /**
      * Gets the unique player ID.
