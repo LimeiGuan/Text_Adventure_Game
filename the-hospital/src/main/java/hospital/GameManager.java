@@ -1369,7 +1369,11 @@ public class GameManager
      	*/
 	public String loadGame()
 	{
-		return "";
+		gameState = gameSaveServices.loadGame(player.getName());
+		map = gameState.load("map", Map.class);
+		player = gameState.load("player", Player.class);
+		inventory = gameState.load("inventory", Inventory.class);
+		return "[Load successful]";
 	}
 	
 	/**
