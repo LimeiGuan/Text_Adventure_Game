@@ -19,22 +19,30 @@ title Save - Internal Sequence Diagram
 actor User
 participant GameUI
 participant GameManager
+participant GameSaveServices
+participant GameState
 
 activate GameUI
 User -> GameUI : insert "save" command
 
 activate GameManager
-GameUI -> GameManager : "save"
+GameUI -> GameManager : commandControl("save")
 
-GameManager -> GameManager : save the progress
+GameManager -> GameSaveServices : save the progress
 
-GameManager -> GameManager : upload
+activate GameState
+GameSaveServices -> GameState : get game progress
+GameState --> GameSaveServices : return game progress
+
+GameSaveServices -> GameSaveServices : save operation
+
+GameSaveServices --> GameManager : operation done
+deactivate GameSaveServices
 
 GameManager --> GameUI : return "Game saved"
 deactivate GameManager
 
-GameUI --> User : show "Game saved"
-
+GameUI --> User : display message "Game saved"
 deactivate GameUI
 
 @enduml
