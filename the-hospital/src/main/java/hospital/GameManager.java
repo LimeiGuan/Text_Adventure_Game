@@ -8,7 +8,7 @@ public class GameManager
 	static Inventory inventory = new Inventory();
 	static boolean enemyFight = false;
 	static boolean questionFlag = false;
-	private static boolean endGame = false;
+	private static boolean endGame = true;
 	
 	public String commandControl(String input)
 	{
@@ -39,7 +39,7 @@ public class GameManager
         		output = mainhall(2, "");
     		else
     		{
-    		if(splitInput[1].equals("controlroom"))
+    		if(splitInput[1].equals("controlroom") || splitInput[1].equals("staircase"))
     			output = controlRoom(2, "");
     		else
     		{
@@ -170,8 +170,26 @@ public class GameManager
         		        			target = splitInput[1] + " " + splitInput[2];
         					}
         					else
-            					return "Game Error";
-        					//Sistemo gli altri comandi
+        					{
+        						if(splitInput[0].equals("inventory") && !questionFlag)
+        							return inventory();
+        						else
+        						{
+        							if(splitInput[0].equals("help"))
+        								return help();
+        							else
+        								if(splitInput[0].equals("newgame"))
+        									return newGame(splitInput[1]);
+        								else
+        									if(splitInput[0].equals("save"))
+        										return save();
+        									else
+        										if(splitInput[0].equals("loadGame"))
+            										return loadGame();
+        										else
+        											return "[Command not avaible]";
+        						}
+        					}
         				}
         				
         			}        			
@@ -252,13 +270,16 @@ public class GameManager
         return output;
     }
 	
-	public static String newGame()
+	public static String newGame(String target)
 	{
+		endGame = false;
+		player = new Player(100,target);
 		return "[You find yourself in a very run-down hospital room.]\r\n"
 				+ "[Find a way out]\r\n";
 	}
 	public static String gameOver()
 	{
+		endGame = true;
 		return "Player has been eliminated! Game Over!!!";
 	}
 	
@@ -635,7 +656,7 @@ public class GameManager
 						if(inventory.searchItem("pepper spray"))
 						{
 							monster.applyDamage(999);
-							use(target);
+							inventory.removeItem("pepper spray");
 							inventory.addItem(new Item("Key room102","Key to unlock room 102"));
 							inventory.addItem(new Medicine("Ban aid","[A band aid. You can use it to recover HP. Heal 20 Hp]",20));
 							map.setFlag(3, 0);
@@ -751,7 +772,7 @@ public class GameManager
 						if(inventory.searchItem("glue"))
 						{
 							monster.applyDamage(999);
-							use(target);
+							inventory.removeItem("glue");
 							inventory.addItem(new Item("Key room103","Key to unlock room 103"));
 							map.setFlag(4, 0);
 							enemyFight = false;
@@ -991,7 +1012,7 @@ public class GameManager
 						if(inventory.searchItem("matches"))
 						{
 							monster.applyDamage(999);
-							use(target);
+							inventory.removeItem("matches");
 							inventory.addItem(new Item("Key staircase","Key to unlock the control room"));
 							map.setFlag(6, 0);
 							enemyFight = false;
@@ -1189,5 +1210,34 @@ public class GameManager
 	public boolean getEndGame()
 	{
 		return endGame;
+	}
+	
+	public String help()
+	{
+		if(enemyFight)
+			return "Attack -> deal damage to the enemy\r\n"
+					+ "Use -> use an item\r\n"
+					+ "Inventory -> prints the inventory in the output";
+		
+		return "Look Around -> prints the interactable items in the room\r\n"
+				+ "Interact [item name] ->interact with the item in the room\r\n"
+				+ "Use -> use an item\r\n"
+				+ "Save -> save the game\r\n"
+				+ "NewGame [name player] -> start a new game\r\n"
+				+ "LoadGame [save game name] -> load a new game\r\n"
+				+ "Inventory -> prints the inventory in the output";
+	}
+	public String loadGame()
+	{
+		return "";
+	}
+	public String save()
+	{
+		if(enemyFight || questionFlag)
+			return "[Not avaible right now]";
+		else
+		{
+			return "[Save successful]";
+		}
 	}
 }
