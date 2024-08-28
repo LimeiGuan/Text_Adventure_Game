@@ -254,7 +254,7 @@ public class GameManager
 				{
 					if(inventory.searchItem("scalpel"))
 					{
-						inventory.addItem(new Item("Key room 203","Key to unlock room 203"));
+						inventory.addItem(new Item("Key room203","Key to unlock room 203"));
 						map.setFlag(1, 0);
 						return "[The doll can’t hear you.]\r\n"
 								+ "[You destroy the right doll with the scalpel. Inside you find the key to room 203]";
@@ -285,7 +285,7 @@ public class GameManager
 						return "[The doll can’t see you.]\r\n"
 								+ "[You try to destroy the left doll with the scalpel…]\r\n"
 								+ "BATTLE\r\n"
-								+ "[Kill  “Can’t hear, see, talk”]\r\n";
+								+ "[Kill  “Can’t hear, see, talk”]";
 					}
 					else
 						return "[The doll can’t see you.]\r\n"
@@ -308,8 +308,7 @@ public class GameManager
 					return "No such room";
 				else
 				{
-					
-					if(!inventory.searchItem("key room 201"))
+					if(!inventory.searchItem("key room201"))
 					{
 						return "[The door seems to be locked, try to find something to unlock the door]";
 					}
@@ -327,8 +326,10 @@ public class GameManager
 					if(monster.applyDamage(operation))
 					{
 						inventory.addItem(new Medicine("Bandage","[A bandage. You can use it to recover HP. Heal 15 Hp]",15));
-						map.setFlag(2, 0);
-						return "[After you kill the monster, it drops something]";
+						map.setFlag(1, 2);
+						enemyFight = false;
+						return "[After you kill the monster, it drops something]\r\n"
+								+ "[A bandage. You can use it to recover HP]";
 					}
 					else 
 					{
@@ -371,14 +372,14 @@ public class GameManager
 			{
 				if(target.equals("table") && map.getFlag(0, 0))
 				{
-					inventory.addItem(new Item("Key room 201","Key to unlock room 201"));
+					inventory.addItem(new Item("Key room201","Key to unlock room 201"));
 					map.setFlag(0, 0);
 					return "[There is a key on the table]\r\n"
-							+ "[You obtain key n° 201]\r\n";
+							+ "[You obtain key n° 201]";
 				}
 				if(target.equals("door"))
 				{
-					if(inventory.searchItem("key room 202"))
+					if(inventory.searchItem("key room202"))
 						return "[You unlock the door with the key.]";
 					else
 						return "[The door seems to be locked, try to find something to unlock the door]";
@@ -393,10 +394,10 @@ public class GameManager
 				}
 				if(target.equals("wardrobe") && map.getFlag(0, 1))
 				{
-					inventory.addItem(new Item("Key room 202","Key to unlock room 202"));
+					inventory.addItem(new Item("Key room202","Key to unlock room 202"));
 					map.setFlag(0, 1);
 					return "[There is a key inside.]\r\n"
-							+ "[You got the key n° 202]\r\n";
+							+ "[You got the key n° 202]";
 				}
 				if(target.equals("window"))
 				{
@@ -407,7 +408,7 @@ public class GameManager
 					boolean deathFlag = player.applyDamage(5);
 					if(!deathFlag)
 					return "[You try to take a shard. Now your hand is dripping with blood, but strangely you don’t feel any pain.]\r\n"
-							+ "[You lose HP.]\r\n";
+							+ "[You lose HP.]";
 					else
 						return gameOver();
 				}
@@ -436,9 +437,8 @@ public class GameManager
 				return "Game Error!";
 		}
 	}
-	public String room203(int operation, String target)
+	public static String room203(int operation, String target)
 	{
-		
 		switch(operation)
 		{
 			case 0:
@@ -448,7 +448,27 @@ public class GameManager
 					lookAround += "Cupboard\n";
 				if(map.getFlag(2, 2))
 					lookAround += "Piano";
+				if(!map.getFlag(2, 1) && !map.getFlag(2, 2))
+					lookAround = "[There is only a broken piano]";
 				return lookAround;
+			}
+			case 1:
+			{
+				if(target.equals("cupboard") && map.getFlag(2, 1))
+				{
+					inventory.addItem(new Item("Pepper spray","It's effective against a certain type of monster"));
+					map.setFlag(2, 1);
+					return "[You find pepper spray.]\r\n"
+							+ "[It's effective against a certain type of monster]";
+				}
+				if(target.equals("piano") && map.getFlag(2, 2))
+				{
+					inventory.addItem(new Item("Key lift","Key to operate the lift"));
+					map.setFlag(2, 2);
+					return "[You play some notes and realize the sound is out of tune.]\r\n"
+							+ "[You open the piano and find the keycard to the elevator.]";
+				}
+				return "[No such target]";
 			}
 			case 2:
 			{
@@ -457,9 +477,50 @@ public class GameManager
 					return "[No such room]";
 				else
 				{
-					player.setPosition(203);
-					return "[You are now in Room 203]";
+					if(!inventory.searchItem("key room203"))
+					{
+						return "[The door seems to be locked, try to find something to unlock the door]";
+					}
+					else
+					{
+						player.setPosition(203);
+						if(!map.getFlag(2, 0))
+							return "[You are now in Room 203]";
+						else
+						{
+							enemyFight = true;
+							monster = new Enemy(65);
+							monster.setAttackValue(15);
+							return "[You enter Room 203.]\r\n"
+									+ "[A dark tall figure looms in front of a broken piano. You try to leave, but it hears you and launches towards you.]\r\n"
+									+ "BATTLE\r\n"
+									+ "[Kill “Amnesia”]";
+						}
+					}
 				}
+			}
+			case 3:
+			{
+				if(target.equals("attack"))
+				{
+					if(monster.applyDamage(operation))
+					{
+						inventory.addItem(new Medicine("Bandage","[A bandage. You can use it to recover HP. Heal 15 Hp]",15));
+						map.setFlag(2, 0);
+						enemyFight = false;
+						return "[After you kill the monster, it drops something]\r\n"
+								+ "[A bandage. You can use it to recover HP]";
+					}
+					else 
+					{
+						if(player.applyDamage(operation))
+							return gameOver();
+						else
+							return "The enemy health is : " + monster.getCurrHealth();
+					}
+				}
+				else
+					return use(target);
 			}
 			default:
 				return "Game Error!";
@@ -493,7 +554,7 @@ public class GameManager
 						player.setPosition(101);
 						if(map.getFlag(3, 0))
 						{
-							return "enemy-[The shelfs are full of collections of eyes.]\r\n"
+							return "[The shelfs are full of collections of eyes.]\r\n"
 									+ "[You admit that they are pretty, but at the same time creepy.]\r\n"
 									+ "[Suddenly the sound of glass shattering catches your attention.]\r\n"
 									+ "[A monster made of many eyes is ready to attack you.]\r\n"
@@ -681,7 +742,7 @@ public class GameManager
 				{
 					if(position == 202)
 					{
-						if(!inventory.searchItem("key room 202"))
+						if(!inventory.searchItem("key room202"))
 						{
 							return "[The door seems to be locked, try to find something to unlock the door]";
 						}
