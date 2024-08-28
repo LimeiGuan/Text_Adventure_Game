@@ -275,7 +275,8 @@ public class GameManager
 		endGame = false;
 		player = new Player(100,target);
 		return "[You find yourself in a very run-down hospital room.]\r\n"
-				+ "[Find a way out]\r\n";
+				+ "[Find a way out]\r\n"
+				+ "[You are in room 202]";
 	}
 	public static String gameOver()
 	{
