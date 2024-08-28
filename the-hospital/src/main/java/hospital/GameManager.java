@@ -14,6 +14,8 @@ public class GameManager
 	static boolean enemyFight = false;
 	static boolean questionFlag = false;
 	private static boolean endGame = true;
+	GameSaveServices gameSaveServices = new GameSaveServices();
+	static GameState gameState;
 
 
 	/**
@@ -289,6 +291,7 @@ public class GameManager
      	*/
 	public static String newGame(String target)
 	{
+		gameState = new GameState("save.json");
 		endGame = false;
 		player = new Player(100,target);
 		return "[You find yourself in a very run-down hospital room.]\r\n"
@@ -1380,6 +1383,8 @@ public class GameManager
 			return "[Not avaible right now]";
 		else
 		{
+			gameState.updateProgress(map, player, inventory);
+			gameSaveServices.saveGame(player.getName(), gameState);
 			return "[Save successful]";
 		}
 	}
