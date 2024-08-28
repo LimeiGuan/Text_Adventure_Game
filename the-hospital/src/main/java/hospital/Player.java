@@ -1,5 +1,6 @@
 package hospital;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -16,25 +17,22 @@ public class Player extends Character
     /**
      * The unique identifier for the player.
      */
-    @JsonProperty("player_id")
 	private String playerId;
     
     /**
      * The name of the player.
      */
-    @JsonProperty("name")
-	private String name;
+	private String name = "";
     
     /**
      * The attack buff value when the player equips an item.
      */
-    @JsonProperty("buff")
+    @JsonIgnore
 	private int buff = 0;
     
     /**
      * The current position of the player on the map.
      */
-    @JsonProperty("current_position")
 	private int curr_Position = 202;
     
     /**
@@ -60,7 +58,8 @@ public class Player extends Character
      * @param hp The maximum health of the player.
      * @param nm The name of the player.
      */
-	public Player(int hp, String nm)
+	@JsonCreator
+	public Player(@JsonProperty("max_health") int hp, @JsonProperty("name") String nm)
 	{	
 		super(hp);
 		this.playerId = UUID.randomUUID().toString();
@@ -82,7 +81,6 @@ public class Player extends Character
 		curr_health += heal;
 		if(curr_health > max_health)
 			curr_health = max_health;
-
 	}
 	
     /**
@@ -135,15 +133,29 @@ public class Player extends Character
      *
      * @return The player's unique identifier.
      */
+    @JsonProperty("player_id")
     public String getPlayerId()
     {
         return playerId;
     }
     /**
+     * Restore the player's ID during the deserialization process.
+     *
+     * @param id	the unique identifier for the player, corresponding to the 
+     *        		"player_id" field in the JSON data.
+     */
+    @JsonProperty("player_id")
+    private void setPlayerId(String id)
+    {
+        this.playerId = id;
+    }
+    
+    /**
      * Gets the player's name.
      *
      * @return The player's name.
      */
+    @JsonProperty("name")
     public String getName()
     {	return name;
     	
@@ -162,6 +174,7 @@ public class Player extends Character
      *
      * @return The player's current position.
      */
+    @JsonProperty("current_position")
 	public int getPosition()
 	{
 		return curr_Position;
@@ -172,6 +185,7 @@ public class Player extends Character
      *
      * @param position The new position for the player.
      */
+    @JsonProperty("current_position")
 	public void setPosition(int position)
 	{
 		curr_Position = position;
