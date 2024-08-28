@@ -52,15 +52,18 @@ public class GameSaveServices implements AutoCloseable
             throw new IllegalArgumentException("Bucket name is not configured properly.");
         }
 
+        S3Client s3Client = null;
+        
         try
         {
-        	this.s3 = S3Client.builder().region(region).credentialsProvider(ProfileCredentialsProvider.create()).build();
+        	s3Client = S3Client.builder().region(region).credentialsProvider(ProfileCredentialsProvider.create()).build();
         }
         catch (Exception e)
         {
             LOGGER.log(Level.SEVERE, "Failed to create S3Client: " + e.getMessage(), e);
         }
         
+        this.s3 = s3Client;
         this.bucketName = bucketNameConfig;
         this.objectMapper = new ObjectMapper();
     }
