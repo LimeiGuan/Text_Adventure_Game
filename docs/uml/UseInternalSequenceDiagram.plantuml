@@ -14,8 +14,74 @@ skinparam ActorFontColor #DC143C
 skinparam ParticipantFontColor #DC143C
 skinparam ParticipantBorderColor #DC143C
 
+skinparam SequenceGroupBorderColor #DC143C
+
 title Use - Internal Sequence Diagram
 
+actor User
+participant GameUI
+participant GameManager
+participant Inventory
+participant Item
+participant Medicine
+participant Weapon
+participant Player
+participant Enemy
 
+activate GameUI
+User -> GameUI : insert "use <item>" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("use <item>")
+
+activate Inventory
+GameManager -> Inventory : searchItem(<item>)
+
+activate Item
+Inventory -> Item : getId(<item>)
+Item --> Inventory : return Id of the Item
+
+Inventory -> Inventory : contains(<item>)
+activate Player
+
+  alt item not present
+    Inventory --> GameManager : return boolean False
+
+  else item present
+    Inventory --> GameManager : return boolean True
+
+    alt item is Medicine
+      activate Medicine
+      GameManager -> Medicine : use item
+      Medicine -> Player : restore player HP
+      deactivate Medicine
+
+    else item is Weapon
+      activate Weapon
+      GameManager -> Weapon : use item
+      Weapon -> Player : buff player atk
+      deactivate Weapon
+
+    else special item
+      activate Enemy
+      GameManager -> Item : use item
+      Item -> Enemy : enemy HP drops to zero
+      deactivate Enemy
+    
+    end
+
+    deactivate Player
+    deactivate Item
+
+    GameManager -> Inventory : removeItem(<item>)
+    deactivate Inventory
+
+  end
+
+
+GameManager --> GameUI : return message
+deactivate GameManager
+GameUI --> User : display message 
+deactivate GameUI
 
 @enduml
