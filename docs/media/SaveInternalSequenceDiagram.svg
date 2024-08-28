@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="783.3333px" preserveAspectRatio="none" style="width:1057px;height:783px;background:#FFFFFF;" version="1.1" viewBox="0 0 1057 783" width="1057.2917px" zoomAndPan="magnify"><defs><filter height="300%" id="f7vq4yglpo1x1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0833333333333335"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.166666666666667" dy="4.166666666666667" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" height="57.5846" id="_title" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="437.5" x="330.9896" y="20.8333"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="20.8333" font-weight="bold" lengthAdjust="spacing" textLength="404.1667" x="347.6563" y="56.838">Save - Internal Sequence Diagram</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="454.9154" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="293.2292" y="202.3438"/><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="363.3138" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="510.9375" y="243.9779"/><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="322.7214" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="982.2917" y="343.9128"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="43.75" x2="43.75" y1="191.9271" y2="676.0091"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="297.9167" x2="297.9167" y1="191.9271" y2="676.0091"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="516.1458" x2="516.1458" y1="191.9271" y2="676.0091"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="756.7708" x2="756.7708" y1="191.9271" y2="676.0091"/><line style="stroke:#CCCCCC;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="986.9792" x2="986.9792" y1="191.9271" y2="676.0091"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="26.0417" y="178.5624">User</text><ellipse cx="44.2708" cy="99.2513" fill="none" filter="url(#f7vq4yglpo1x1)" rx="8.3333" ry="8.3333" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><path d="M44.2708,107.5846 L44.2708,135.7096 M30.7292,115.918 L57.8125,115.918 M44.2708,135.7096 L30.7292,151.3346 M44.2708,135.7096 L57.8125,151.3346 " fill="none" filter="url(#f7vq4yglpo1x1)" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="26.0417" y="696.9869">User</text><ellipse cx="44.2708" cy="719.7266" fill="none" filter="url(#f7vq4yglpo1x1)" rx="8.3333" ry="8.3333" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><path d="M44.2708,728.0599 L44.2708,756.1849 M30.7292,736.3932 L57.8125,736.3932 M44.2708,756.1849 L30.7292,771.8099 M44.2708,756.1849 L57.8125,771.8099 " fill="none" filter="url(#f7vq4yglpo1x1)" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="85.4167" x="254.1667" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="271.875" y="167.1041">GameUI</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="85.4167" x="254.1667" y="674.9674"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="50" x="271.875" y="704.2786">GameUI</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="130.2083" x="449.4792" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="94.7917" x="467.1875" y="167.1041">GameManager</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="130.2083" x="449.4792" y="674.9674"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="94.7917" x="467.1875" y="704.2786">GameManager</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="158.3333" x="676.5625" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="122.9167" x="694.2708" y="167.1041">GameSaveServices</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="158.3333" x="676.5625" y="674.9674"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="122.9167" x="694.2708" y="704.2786">GameSaveServices</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="108.3333" x="931.7708" y="137.793"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="72.9167" x="949.4792" y="167.1041">GameState</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="49.9674" rx="4.1667" ry="4.1667" style="stroke:#DC143C;stroke-width:1.0416666666666667;" width="108.3333" x="931.7708" y="674.9674"/><text fill="#DC143C" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="72.9167" x="949.4792" y="704.2786">GameState</text><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="454.9154" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="293.2292" y="202.3438"/><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="363.3138" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="510.9375" y="243.9779"/><rect fill="none" filter="url(#f7vq4yglpo1x1)" height="322.7214" style="stroke:#CCCCCC;stroke-width:1.0416666666666667;" width="10.4167" x="982.2917" y="343.9128"/><polygon fill="#DC143C" points="280.7292,239.8112,291.1458,243.9779,280.7292,248.1445,284.8958,243.9779" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="44.2708" x2="286.9792" y1="243.9779" y2="243.9779"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="150" x="61.9792" y="228.5299">insert "save" command</text><polygon fill="#DC143C" points="498.4375,289.7786,508.8542,293.9453,498.4375,298.112,502.6042,293.9453" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="303.6458" x2="504.6875" y1="293.9453" y2="293.9453"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="161.4583" x="321.3542" y="278.4973">commandControl("save")</text><polygon fill="#DC143C" points="744.7917,339.7461,755.2083,343.9128,744.7917,348.0794,748.9583,343.9128" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="521.3542" x2="751.0417" y1="343.9128" y2="343.9128"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="118.75" x="539.0625" y="328.4648">save the progress</text><polygon fill="#DC143C" points="969.7917,389.7135,980.2083,393.8802,969.7917,398.0469,973.9583,393.8802" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="757.2917" x2="976.0417" y1="393.8802" y2="393.8802"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="125" x="775" y="378.4322">get game progress</text><polygon fill="#DC143C" points="768.75,439.681,758.3333,443.8477,768.75,448.0143,764.5833,443.8477" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="762.5" x2="981.25" y1="443.8477" y2="443.8477"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="143.75" x="785.4167" y="428.3997">return game progress</text><line style="stroke:#DC143C;stroke-width:3.125;" x1="757.2917" x2="801.0417" y1="493.8151" y2="493.8151"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="801.0417" x2="801.0417" y1="493.8151" y2="507.3568"/><line style="stroke:#DC143C;stroke-width:3.125;" x1="758.3333" x2="801.0417" y1="507.3568" y2="507.3568"/><polygon fill="#DC143C" points="768.75,503.1901,758.3333,507.3568,768.75,511.5234,764.5833,507.3568" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="97.9167" x="775" y="478.3671">save operation</text><polygon fill="#DC143C" points="532.8125,553.1576,522.3958,557.3242,532.8125,561.4909,528.6458,557.3242" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="526.5625" x2="756.25" y1="557.3242" y2="557.3242"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="101.0417" x="549.4792" y="541.8762">operation done</text><polygon fill="#DC143C" points="315.1042,603.125,304.6875,607.2917,315.1042,611.4583,310.9375,607.2917" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="308.8542" x2="515.1042" y1="607.2917" y2="607.2917"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="135.4167" x="331.7708" y="591.8437">return "Game saved"</text><polygon fill="#DC143C" points="55.7292,653.0924,45.3125,657.2591,55.7292,661.4258,51.5625,657.2591" style="stroke:#DC143C;stroke-width:1.0416666666666667;"/><line style="stroke:#DC143C;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="49.4792" x2="297.3958" y1="657.2591" y2="657.2591"/><text fill="#222222" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="203.125" x="72.3958" y="641.8111">display message "Game saved"</text><!--MD5=[fc27f1623ab920c737773bb6bee6381e]
+@startuml
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+title Save - Internal Sequence Diagram
+
+actor User
+participant GameUI
+participant GameManager
+participant GameSaveServices
+participant GameState
+
+activate GameUI
+User -> GameUI : insert "save" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("save")
+
+GameManager -> GameSaveServices : save the progress
+
+activate GameState
+GameSaveServices -> GameState : get game progress
+GameState - -> GameSaveServices : return game progress
+
+GameSaveServices -> GameSaveServices : save operation
+
+GameSaveServices - -> GameManager : operation done
+deactivate GameSaveServices
+
+GameManager - -> GameUI : return "Game saved"
+deactivate GameManager
+
+GameUI - -> User : display message "Game saved"
+deactivate GameUI
+@enduml
+
+@startuml
+
+
+
+skinparam backgroundColor transparent
+skinparam useBetaStyle false
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor transparent
+    FontColor #2196F3
+    HyperLinkColor #fd7e14
+    LineColor #1a78c2
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+   Padding 15
+   roundcorner 20
+   BackgroundColor transparent
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #fff
+    FontColor #9C27B0
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #222
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #222
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  transparent
+	FontColor #2196F3
+	BorderColor #fff
+  }
+  nwdiagDiagram {
+	network {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent    
+		LineColor #2196F3
+		LineThickness 1.0
+		FontColor #1a78c2
+	}
+	server {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	}
+	arrow {
+		FontColor #1a78c2
+		LineColor #1a78c2
+	}
+	group {
+		BackGroundColor #fff
+		LineColor $LIGHT_DARK
+		LineThickness 2.0
+		Margin 5
+		Padding 5
+	}
+  }
+  ganttDiagram {
+	task {
+			FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+		LineColor #2196F3
+		Margin 10
+		Padding 6
+	}
+	note {
+		FontColor #9C27B0
+		LineColor #7D1F8D
+		BackGroundColor transparent
+	}
+	separator {
+		LineColor #cccccc
+		BackGroundColor transparent
+		FontColor #cccccc
+	}
+	milestone {
+		FontColor #9C27B0
+		FontSize 16
+		FontStyle italic
+		BackGroundColor #fff
+		LineColor #cccccc
+	}
+	timeline {
+		BackgroundColor #fff
+		FontColor #cccccc
+	}
+	closed {
+		BackgroundColor #CC7A00
+		FontColor #ff9800
+	}
+  }
+</style>
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             true
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               10 
+skinparam TitleFontColor	    #222
+skinparam TitleFontSize	    	20
+skinparam TitleBorderThickness 	0
+skinparam ArrowColor            #666
+skinparam stereotype {
+    CBackgroundColor #fff
+    CBorderColor #cccccc
+    ABackgroundColor #70bf73
+    ABorderColor #3D8C40
+    IBackgroundColor #B7161C
+    IBorderColor $DANGER_DARK
+    EBackgroundColor #ffad33
+    EBorderColor #CC7A00
+    NBackgroundColor #b052c0
+    NBorderColor #7D1F8D
+}
+skinparam title {
+	FontColor	                 #2196F3
+	BorderColor	                 #cccccc
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor              transparent
+}
+
+skinparam legend {
+	BackgroundColor transparent
+	BorderColor #cccccc
+	FontColor #222
+}
+
+skinparam swimlane {
+	BorderColor #9C27B0
+	BorderThickness 2
+	TitleBackgroundColor  #fff-#fff
+	TitleFontColor #2196F3
+}
+
+
+skinparam activity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BarColor #4CAF50
+	StartColor #9C27B0
+	EndColor #9C27B0
+	DiamondBackgroundColor transparent
+  	DiamondBorderColor #cccccc
+	DiamondFontColor #cccccc
+}
+
+
+skinparam participant {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	ParticipantBorderThickness 2
+}
+
+
+skinparam actor {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam arrow {
+	Thickness 3
+	Color #2196F3
+	FontColor #222
+}
+
+
+skinparam sequence {
+	BorderColor #2196F3
+	TitleFontColor #2196F3
+	BackgroundColor transparent
+	StartColor #2196F3
+	EndColor #2196F3
+	BoxBackgroundColor transparent
+	BoxBorderColor #666
+	BoxFontColor #222
+	DelayFontColor #222
+	LifeLineBorderColor #cccccc
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor transparent
+	GroupBorderColor #666
+	GroupFontColor #222
+	GroupHeaderFontColor #9C27B0
+	DividerBackgroundColor transparent
+    DividerBorderColor #666
+    DividerBorderThickness 2
+    DividerFontColor #222
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #666
+	ReferenceFontColor #222
+	ReferenceHeaderFontColor #9C27B0
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam partition {
+	BorderColor #2196F3
+	FontColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam collections {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam control {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam entity {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam boundary {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam agent {
+	BackgroundColor transparent
+	BorderColor #999999
+	FontColor #333333
+}
+
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam artifact {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+}
+
+
+skinparam component {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam interface {
+	BackgroundColor  transparent
+	BorderColor  #e51c23
+	FontColor #222
+}
+
+
+skinparam storage {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+}
+
+
+skinparam node {
+	BackgroundColor transparent
+	BorderColor #222
+	FontColor #222
+}
+
+
+skinparam cloud {
+	BackgroundColor #F2FCFE-#eeeeee
+	BorderColor #F2FCFE
+	FontColor #222
+}
+
+
+skinparam database {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam class {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	FontColor #fff
+	HeaderBackgroundColor #2196F3-#1a78c2
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #222
+	AttributeFontSize 11
+}
+
+
+skinparam object {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StereotypeFontColor #222
+	BorderThickness 1
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam usecase {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam rectangle {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2196F3
+}
+
+
+skinparam package {
+	BackgroundColor transparent
+  	BorderColor #2196F3
+	FontColor #2196F3
+	BorderThickness 2
+}
+
+
+skinparam folder {
+	BackgroundColor transparent
+  	BorderColor #ff9800
+	FontColor #ff9800
+	BorderThickness 2
+}
+
+
+skinparam frame {
+	BackgroundColor transparent
+  	BorderColor #9C27B0
+	FontColor #9C27B0
+	BorderThickness 2
+}
+
+
+skinparam state {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+	StartColor #9C27B0
+	EndColor #9C27B0
+	AttributeFontColor #cccccc
+	AttributeFontSize 11
+}
+
+
+skinparam queue {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+
+skinparam card {
+	BackgroundColor transparent
+	BorderColor #9C27B0
+	FontColor #9C27B0
+}
+
+
+skinparam file {
+	BackgroundColor transparent
+	BorderColor #666
+	FontColor #666
+
+}
+
+
+skinparam stack {
+		FontColor #2196F3
+	BorderColor #2196F3
+	BackgroundColor transparent
+}
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+title Save - Internal Sequence Diagram
+
+actor User
+participant GameUI
+participant GameManager
+participant GameSaveServices
+participant GameState
+
+activate GameUI
+User -> GameUI : insert "save" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("save")
+
+GameManager -> GameSaveServices : save the progress
+
+activate GameState
+GameSaveServices -> GameState : get game progress
+GameState - -> GameSaveServices : return game progress
+
+GameSaveServices -> GameSaveServices : save operation
+
+GameSaveServices - -> GameManager : operation done
+deactivate GameSaveServices
+
+GameManager - -> GameUI : return "Game saved"
+deactivate GameManager
+
+GameUI - -> User : display message "Game saved"
+deactivate GameUI
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 17:01:30 UTC 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
