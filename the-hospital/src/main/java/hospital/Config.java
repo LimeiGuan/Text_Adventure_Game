@@ -15,7 +15,7 @@ public class Config
 
     static
     {
-        try (InputStream input = Config.class.getClassLoader().getResourceAsStream("config.properties")
+        try (InputStream input = Config.class.getClassLoader().getResourceAsStream("config.properties"))
 		{
         	if (input != null)
         	{
