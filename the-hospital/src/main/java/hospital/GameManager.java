@@ -1,5 +1,10 @@
 package hospital;
-
+/**
+ * The GameManager class handles the game logic and controls the interaction 
+ * between the player, map, enemies, and items in the hospital-themed game.
+ * It manages the game state, processes player commands, and controls the 
+ * game's flow.
+ */
 public class GameManager
 {
 	static Player player = new Player();
