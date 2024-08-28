@@ -16,6 +16,26 @@
 
     </properties>
 
+ 	 <reporting>
+ 	   <plugins>
+ 	     <plugin>
+ 	       <groupId>org.apache.maven.plugins</groupId>
+ 	       <artifactId>maven-surefire-report-plugin</artifactId>
+ 	       <version>3.5.0</version>
+   	     <configuration>
+   	       <outputDirectory>${basedir}/target/newsite</outputDirectory>
+   	     </configuration>
+   	   </plugin>
+   	   <plugin>
+   	     <groupId>org.apache.maven.plugins</groupId>
+   	     <artifactId>maven-site-plugin</artifactId>
+   	     <version>2.1</version>
+   	     <configuration>
+   	       <outputDirectory>${basedir}/target/newsite</outputDirectory>
+   	     </configuration>
+   	   </plugin>
+   	 </plugins>
+  	</reporting>
     <dependencies>
     
         <!-- AWS SDK per S3 -->
@@ -75,12 +95,20 @@
 
     <build>
         <plugins>
-            <!-- Maven Surefire Plugin for running tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-            </plugin>
+        <!-- Surefire plugin for running tests -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.5.0</version>
+        </plugin>
+        
+        <!-- Surefire report plugin for generating test reports -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-report-plugin</artifactId>
+            <version>3.5.0</version>
+
+        </plugin>
 
             <!-- Maven Jar Plugin for creating an executable JAR -->
             <plugin>
