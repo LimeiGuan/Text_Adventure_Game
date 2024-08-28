@@ -7,6 +7,8 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Exception;
 import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.core.sync.RequestBody;
+
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -39,67 +41,81 @@ public class GameSaveServices implements AutoCloseable
      * the bucket name from the Config class.
      * </p>
      */
+    
     public GameSaveServices()
     {
-        this.s3 = S3Client.builder()
-                .region(Region.EU_NORTH_1)
-                .credentialsProvider(ProfileCredentialsProvider.create())
-                .build();
-        this.bucketName = Config.getBucketName();
+        // Externalize the region and credentials provider if possible
+        Region region = Region.of(System.getenv("AWS_REGION")); // Use environment variable or other configuration
+        String bucketNameConfig = Config.getBucketName();
+        
+        if (bucketNameConfig == null || bucketNameConfig.isEmpty()) {
+            throw new IllegalArgumentException("Bucket name is not configured properly.");
+        }
+
+        try
+        {
+        	this.s3 = S3Client.builder().region(region).credentialsProvider(ProfileCredentialsProvider.create()).build();
+        }
+        catch (Exception e)
+        {
+            LOGGER.log(Level.SEVERE, "Failed to create S3Client: " + e.getMessage(), e);
+        }
+        
+        this.bucketName = bucketNameConfig;
         this.objectMapper = new ObjectMapper();
     }
+
 
     /**
      * Saves the provided GameState object to Amazon S3.
      * <p>
      * Serializes the GameState to a temporary JSON file and uploads it to S3 using the specified
-     * playerId. The temporary file is deleted after the upload is complete.
+     * name. The temporary file is deleted after the upload is complete.
      * </p>
      *
-     * @param playerId the ID of the player whose game state is being saved
+     * @param name the ID of the player whose game state is being saved
      * @param gameState the GameState object to be saved
      */
-    public void saveGame(String playerId, GameState gameState)
+    public void saveGame(String name, GameState gameState)
     {
-        String key = playerId + "/save.json";
+        String key = name + "/save.json";
         Path tempFile = null;
-        try 
-        {
+        try {
             tempFile = Files.createTempFile("game_state_", ".json");
             objectMapper.writeValue(tempFile.toFile(), gameState);
 
             s3.putObject(PutObjectRequest.builder()
-                            .bucket(bucketName)
-                            .key(key)
-                            .build(),
-                    tempFile);
-        } catch (IOException e)
-        {
-        	LOGGER.log(Level.SEVERE, "Failed to save game state to S3: " + e.getMessage(), e);
-        } finally
-        {
-        	 deleteTempFile(tempFile);
+                    .bucket(bucketName)
+                    .key(key)
+                    .build(),
+            RequestBody.fromFile(tempFile.toFile())); // Correct method to use RequestBody.fromFile
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "Failed to save game state to S3: " + e.getMessage(), e);
+        } finally {
+            deleteTempFile(tempFile); // Safely handles potential null tempFile
         }
     }
+
 
     /**
      * Loads a GameState object from Amazon S3.
      * <p>
-     * Downloads the game state JSON file from S3 using the specified playerId and deserializes it
+     * Downloads the game state JSON file from S3 using the specified name and deserializes it
      * into a GameState object. The temporary file used for downloading is deleted after reading.
      * </p>
      *
-     * @param playerId the ID of the player whose game state is being loaded
+     * @param name the ID of the player whose game state is being loaded
      * @return the loaded GameState object
      * @throws IOException if there is an error downloading or deserializing the game state
      */
-    public GameState loadGame(String playerId) throws IOException
+    public GameState loadGame(String name) throws IOException
     {
-        String key = playerId + "/save.json";
-        Path tempFile = Files.createTempFile("downloaded_save_", ".json");
+        String key = name + "/save.json";
+        Path tempFile = null;
 
         try 
         {
+        	tempFile = Files.createTempFile("downloaded_save_", ".json");
             s3.getObject(GetObjectRequest.builder()
                             .bucket(bucketName)
                             .key(key)
@@ -107,12 +123,22 @@ public class GameSaveServices implements AutoCloseable
                     tempFile);
 
             return objectMapper.readValue(tempFile.toFile(), GameState.class);
-        } catch (S3Exception e) 
+        }
+        catch (S3Exception e) 
         {
-        	LOGGER.log(Level.SEVERE, "Failed to load game state from S3: " + e.awsErrorDetails().errorMessage(), e);
-        	throw new IOException("Failed to load game state", e);
-        } finally 
+            // Log S3-specific errors
+            LOGGER.log(Level.SEVERE, "Failed to load game state from S3: " + e.awsErrorDetails().errorMessage(), e);
+            throw new IOException("Failed to load game state", e);
+        } 
+        catch (IOException e) 
         {
+            // Log I/O-specific errors (e.g., file read/write issues)
+            LOGGER.log(Level.SEVERE, "I/O error occurred while loading game state: " + e.getMessage(), e);
+            throw e;
+        }
+        finally 
+        {
+            // Clean up temporary file
             deleteTempFile(tempFile);
         }
     }
@@ -120,14 +146,14 @@ public class GameSaveServices implements AutoCloseable
     /**
      * Deletes the game state file from Amazon S3.
      * <p>
-     * Removes the file associated with the specified playerId from S3.
+     * Removes the file associated with the specified name from S3.
      * </p>
      *
-     * @param playerId the ID of the player whose game state is being deleted
+     * @param name the ID of the player whose game state is being deleted
      */
-    public void deleteGame(String playerId)
+    public void deleteGame(String name)
     {
-        String key = playerId + "/save.json";
+        String key = name + "/save.json";
         try 
         {
             s3.deleteObject(DeleteObjectRequest.builder()
@@ -175,4 +201,3 @@ public class GameSaveServices implements AutoCloseable
         s3.close();
     }
 }
-
