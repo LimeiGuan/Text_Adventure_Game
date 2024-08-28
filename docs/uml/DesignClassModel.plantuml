@@ -45,8 +45,11 @@ class Enemy{
 class GameUI{
   -gameManager: GameManager
   -outputBox: TextArea
+  -mapImageView: ImageView
   
+  +GameUI()
   +start()
+  -updateMapBox()
   +main()
 }
 
@@ -56,6 +59,10 @@ class GameManager{
   -monster: Enemy
   -inventory: Inventory
   -enemyFight: boolean
+  -questionFlag: boolean
+  -endGame: boolean
+  -gameSaveServices: GameSaveServices
+  -gameState: GameState
   
   +commandControl()
   +newGame()
@@ -74,20 +81,46 @@ class GameManager{
   +lift()
   +use()
   +inventory()
+  +exit()
+  +getEndGame()
+  +help()
+  +loadGame()
+  +save()
 }
 
 class GameSaveServices{
   -s3: S3Client
   -bucketName: String
+  -objectMapper: ObjectMapper
   
-  +GameSaveService()
+  +GameSaveServices()
   +saveGame()
   +loadGame()
   +deleteGame()
-  +loadGameAsObject()
+  +deleteTempFile()
+  +close()
 }
 
 class GameState{
+  -savedData: Map<String, Object>
+  -objectMapper: ObjectMapper
+  -saveFile: File
+  
+  +GameState()
+  +save()
+  +updateProgress()
+  +persist()
+  +load()
+  +remove()
+  +clear()
+}
+
+class Config{
+  - properties: Properties
+  
+  +Config()
+  +getBucketName()
+  +getRegion()
 }
 
 class Inventory{
@@ -96,6 +129,9 @@ class Inventory{
   +addItem()
   +removeItem()
   +searchItem()
+  +printDescription()
+  +printAll()
+  +getInventory()
 }
 
 class Item{
@@ -163,5 +199,6 @@ GameManager"1" <|--|> "1"GameUI : uses
 GameManager"1" --|> "1"Map : creates
 GameManager"1" --|> "1"GameSaveServices : uses
 GameSaveServices"1" --|> "1"GameState : uses
+GameSaveServices"1" --|> "1"Config : uses
 
 @enduml
