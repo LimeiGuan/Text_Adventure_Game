@@ -110,13 +110,14 @@ public class Character
     /**
      * Sets the attack value of the character.
      *
-     * @param stats The new attack value. Negative values will be converted to positive.
+     * @param stats The new attack value. If less than or equal to 0, then the new attack will
+     * 				be set to 0.
      */
 	@JsonProperty("attack")
 	public void setAttackValue(int stats)
 	{
 		if(stats > 0)	attack = stats;
-		else if(stats<0) attack = -stats;
+		else if(stats <=0) attack = 0;
 	}
 	
     /**
