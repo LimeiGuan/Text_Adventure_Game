@@ -53,6 +53,9 @@ class GameUI{
 class GameManager{
   -player: Player
   -map: Map
+  -monster: Enemy
+  -inventory: Inventory
+  -enemyFight: boolean
   
   +commandControl()
   +newGame()
@@ -70,7 +73,6 @@ class GameManager{
   +morgue()
   +lift()
   +use()
-  +attack()
   +inventory()
 }
 
