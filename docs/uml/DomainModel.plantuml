@@ -34,7 +34,6 @@ object Game
 object Inventory
 
 object Item {
-  id
   name
   description
   }
