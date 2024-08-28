@@ -1137,8 +1137,48 @@ public class GameManager
 	
 	public static String use(String target)
 	{
-		//Utilizzo l'item
-		return "";
+		if(target.equals("scalpel"))
+		{
+			player.equip(15);
+			return "[Scalpel equipped]";
+		}
+			
+		
+		if(target.equals("bandage"))
+		{
+			if(inventory.removeItem("target"))
+			{
+				player.heal(15);
+				return "[15 hp healed]";
+			}
+			else
+				return "[Item not avaible]";
+		}
+			
+		if(target.equals("band aid"))
+		{
+			if(inventory.removeItem("target"))
+			{
+				player.heal(20);
+				return "[20 hp healed]";
+			}
+			else
+				return "[Item not avaible]";			
+		}
+		
+		if(target.equals("syringe"))
+		{
+			if(inventory.removeItem("target"))
+			{
+				player.heal(25);
+				return "[25 hp healed]";
+			}
+			else
+				return "[Item not avaible]";
+			
+		}
+		
+		return inventory.printDescription(target);
 	}
 	
 	public String inventory()
