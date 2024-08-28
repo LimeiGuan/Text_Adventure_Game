@@ -130,6 +130,6 @@ class CharacterTest
 		assertEquals(new_attack, npc.getAttackValue(), "setAttack doesn't work with positives");
 		int another_attack = -20;
 		npc.setAttackValue(another_attack);
-		assertEquals(-another_attack, npc.getAttackValue(), "setAttack doesn't work with negatives");
+		assertEquals(0, npc.getAttackValue(), "setAttack should be 0");
 	}
 }

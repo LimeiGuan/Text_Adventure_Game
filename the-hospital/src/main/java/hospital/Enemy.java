@@ -7,9 +7,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * The Enemy class represents an enemy character in the game, extending the Character class.
  * It inherits properties such as health and attack value and adds additional behavior specific to enemies.
  * 
- * <p>This class integrates with Jackson for JSON serialization and deserialization, allowing it to be
- * easily converted to and from JSON format.</p>
- * 
  * <p>When an enemy takes damage and its current health drops to 0 or below, a message indicating the
  * end of the battle is displayed.</p>
  */

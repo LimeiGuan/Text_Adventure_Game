@@ -39,7 +39,7 @@ class EnemyTest
 		@DisplayName("testing serializatoin")
 	    void testSerialization() throws Exception
 		{
-			npc.applyDamage(20);
+			boolean x = npc.applyDamage(20);
 	        String jsonString = objectMapper.writeValueAsString(npc);
 	        assertTrue(jsonString.contains("\"max_health\":"+ npc.getMaxHealth()));
 	        assertTrue(jsonString.contains("\"curr_health\":" + npc.getCurrHealth()));

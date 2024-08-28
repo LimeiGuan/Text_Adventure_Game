@@ -5,17 +5,17 @@ import java.util.ArrayList;
 
 public class Inventory
 {
-	private ArrayList<ItemEquipable> inventory = new ArrayList<>();
+	private ArrayList<ItemEquippable> inventory = new ArrayList<>();
 
-	public void addItem(ItemEquipable item)
+	public void addItem(ItemEquippable item)
 	{
 		inventory.add(item);
 	}
-	public void removeItem(ItemEquipable item)
+	public void removeItem(ItemEquippable item)
 	{
 		inventory.remove(item);
 	}
-	public boolean searchItem(ItemEquipable item)
+	public boolean searchItem(ItemEquippable item)
 	{
 		if(inventory.contains(item))
 		{
@@ -28,7 +28,7 @@ public class Inventory
 	public String displayItem()
 	{
 		String items = "";
-		for (ItemEquipable item : inventory)
+		for (ItemEquippable item : inventory)
 		{
             items = items + item.getName() + " ";
         }
