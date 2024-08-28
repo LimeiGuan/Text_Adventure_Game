@@ -29,6 +29,8 @@ public class GameUI extends Application
 	private GameManager gameManager;
 	/**TextArea for displaying output*/
 	private TextArea outputBox;
+	// Declare ImageView for map
+    	private ImageView mapImageView;
 
     /**
      * Initializes and starts the JavaFX application.
