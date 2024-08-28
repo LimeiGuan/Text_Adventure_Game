@@ -1,6 +1,7 @@
 package hospital;
 
-
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -21,14 +22,14 @@ class PlayerTest
 	@BeforeEach
 	void setup() throws Exception
 	{
-		npc = new Player(max_hp);
+		npc = new Player(max_hp, "name");
 	}
 	
 	@Test
 	@DisplayName("Testing the construcor")
 	void constructor()
 	{	int hp_expected = 2;
-		Player bok = new Player(hp_expected);
+		Player bok = new Player(hp_expected, "name");
 		assertEquals(hp_expected, bok.getMaxHealth());
 	}
 	

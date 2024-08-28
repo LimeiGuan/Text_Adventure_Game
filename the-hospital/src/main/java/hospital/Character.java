@@ -1,28 +1,38 @@
 package hospital;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo
+	(
+	    use = JsonTypeInfo.Id.NAME,
+	    include = JsonTypeInfo.As.PROPERTY,
+	    property = "@type"
+	)
+	@JsonSubTypes
+	({
+	    @JsonSubTypes.Type(value = Enemy.class, name = "enemy"),
+	    @JsonSubTypes.Type(value = Player.class, name = "player")
+	})
+
 /**
  * The Character class represents a default character, with attributes for stamina and damage
- * 
- * <p>This class integrates with Jackson for JSON serialization and deserialization. The 
- * fields are annotated with {@link JsonProperty} to specify how they should be mapped to 
- * and from JSON.</p>
+ * It is the superclass for specific types of characters like Enemy and Player.
  */
 public class Character
 {
 	/**
      * The maximum health value of the character is set by default to 100.
      */
-	@JsonProperty("max_health")
 	protected int max_health = 100;
     /**
      * The current health value of the character.
      */
-	@JsonProperty("curr_health")
 	protected int curr_health;
     /**
      * The attack value of the character is set by default to 50.
      */
-	@JsonProperty("attack")
 	protected int attack = 50;
 
 	
@@ -39,7 +49,8 @@ public class Character
      * @param heart The maximum health of the character. Must be a positive integer.
      * @throws IllegalArgumentException if the specified maximum health is not positive.
      */
-	public Character(int heart)
+	@JsonCreator
+	public Character(@JsonProperty("max_health") int heart)
 	{
 		try
 		{	setMaxHealth(heart);}
@@ -63,7 +74,7 @@ public class Character
 	}
 
     /**
-     * Sets the maximum health of the character. Note that the current health will also be changed
+     * Sets the maximum health of the character. Note that the current health will not be changed
      *
      * @param hp The new maximum health value. Must be positive.
      * @throws IllegalArgumentException if the specified maximum health is not positive.
@@ -73,14 +84,30 @@ public class Character
 		if (hp <= 0) 
 			throw new IllegalArgumentException("Health must be a positive integer.");
 		this.max_health = hp;
-		curr_health = hp;
 	}
-	
+    /**
+     * Sets the current health of the character. 
+     *
+     * @param hp	The new current health value. Must be positive. If is equal or greater than maximum
+     * 				health, the current health will be set to be equal to the maximum health;
+     * @throws IllegalArgumentException if the specified current health is not positive.
+     */
+	@JsonProperty("curr_health")
+	public void setCurrHealth(int hp)
+	{
+		if (hp <= 0) 
+			throw new IllegalArgumentException("Health must be a positive integer.");
+		if(hp >= max_health) 
+			curr_health = max_health;
+		else 
+			curr_health = hp;
+	}
     /**
      * Sets the attack value of the character.
      *
      * @param stats The new attack value. Negative values will be converted to positive.
      */
+	@JsonProperty("attack")
 	public void setAttackValue(int stats)
 	{
 		if(stats > 0)	attack = stats;
@@ -92,6 +119,7 @@ public class Character
      *
      * @return The current health value.
      */
+	@JsonProperty("curr_health")
 	public int getCurrHealth()
 	{	
 		return curr_health;
@@ -101,6 +129,7 @@ public class Character
      *
      * @return The maximum health value.
      */
+	@JsonProperty("max_health")
 	public int getMaxHealth()
 	{	
 		return max_health;
@@ -110,6 +139,7 @@ public class Character
      *
      * @return The attack value.
      */
+	@JsonProperty("attack")
 	public int getAttackValue()
 	{	
 		return attack;
