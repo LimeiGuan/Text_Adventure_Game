@@ -70,6 +70,23 @@ public class Inventory
 		return false;
 	}
 	
+	/**
+	 * Returns a string representation of all the item names in the inventory.
+	 *
+	 * @return a concatenated string of all item names in the inventory, separated by "+" characters. If the inventory is empty, an empty string is returned.
+	 */
+	
+	public String printAll()
+	{
+		String output = "";
+		for(int i=0;i<inventory.size();i++)
+		{
+			output+=inventory.get(i).getName();
+			output+="+";
+		}
+		return output;
+	}
+	
     /**
      * Gets the list of items in the inventory.
      * 
