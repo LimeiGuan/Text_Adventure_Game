@@ -8,35 +8,82 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GameState {
+public class GameState
+{
+	/**
+	 * The GameState class is responsible for managing the game's saved state
+	 * using JSON serialization. It allows for saving, loading, removing, and clearing
+	 * game state data to and from a specified file.
+	 * <p>
+	 * The game state is stored in a file specified by the path provided to the constructor.
+	 * The class uses Jackson's {@link ObjectMapper} to handle JSON serialization and deserialization.
+	 * </p>
+	 */
 
-    private Map<String, Object> savedData;  // Memoria dei dati
-    private final ObjectMapper objectMapper;  // Gestore JSON di Jackson
-    private final File saveFile;  // Riferimento al file saves.json
+	/**Memory for saved data*/
+    private Map<String, Object> savedData;  
+    /**Jackson JSON handler*/
+    private final ObjectMapper objectMapper;  
+    /**Reference to the save.json file*/
+    private final File saveFile; 
 
-    // Costruttore
+    /**
+     * Constructs a GameState instance with the specified file path for saving and loading data.
+     * <p>
+     * Initializes the {@link ObjectMapper} and loads existing data from the specified file if it exists.
+     * </p>
+     * 
+     * @param saveFilePath the path to the file where the game state will be saved and loaded from
+     */
     public GameState(String saveFilePath)
     {
         this.objectMapper = new ObjectMapper();
         this.saveFile = new File(saveFilePath);
         this.savedData = new HashMap<>();
-        load();  // Carica i dati dal file se esiste
+        load();   // Load data from file if it exists
     }
 
+    /**
+     * Saves a key-value pair to the game state and persists it to the file.
+     * <p>
+     * Updates the in-memory data map and writes the changes to the save file.
+     * </p>
+     * 
+     * @param key the key associated with the data to be saved
+     * @param data the data to be saved
+     */
     public void save(String key, Object data)
     {
-    	savedData.put(key, data);  // Salva il dato nella mappa
-    	persist();  // Aggiorna il file saves.json
+    	savedData.put(key, data);  // Save the data in the map
+    	persist();  // Update the file
     }
 
+    /**
+     * Loads a value from the game state associated with the specified key and converts it to the specified type.
+     * <p>
+     * Retrieves the data from the in-memory map and converts it using Jackson's {@link ObjectMapper}.
+     * </p>
+     * 
+     * @param key the key associated with the data to be loaded
+     * @param valueType the class type to which the data should be converted
+     * @param <T> the type of the data to be returned
+     * @return the data associated with the key, converted to the specified type, or {@code null} if not found
+     */
     public <T> T load(String key, Class<T> valueType)
     {
         return objectMapper.convertValue(savedData.get(key), valueType);
     }
 
+    /**
+     * Writes the current game state to the save file.
+     * <p>
+     * Serializes the in-memory data map to JSON and writes it to the specified file.
+     * </p>
+     */
     private void persist()
     {
-        try {
+        try 
+        {
             objectMapper.writeValue(saveFile, savedData);
             System.out.println("Game state saved to " + saveFile.getPath());
         } catch (IOException e) {
@@ -44,10 +91,16 @@ public class GameState {
         }
     }
 
+    /**
+     * Loads the game state from the save file into memory.
+     * <p>
+     * Deserializes the JSON data from the file into the in-memory data map if the file exists.
+     * </p>
+     */
     private void load()
     {
         if (saveFile.exists())
-        {  // Verifica se il file esiste
+        {  // Check if the file exists
             try 
             {
                 savedData = objectMapper.readValue(saveFile, new TypeReference<Map<String, Object>>() {});
@@ -59,14 +112,27 @@ public class GameState {
         }
     }
 
+    /**
+     * Removes a key-value pair from the game state and persists the changes to the file.
+     * <p>
+     * Deletes the entry associated with the specified key from the in-memory data map and updates the file.
+     * </p>
+     * 
+     * @param key the key of the entry to be removed
+     */
     public void remove(String key) {
-        savedData.remove(key);  // Rimuove l'oggetto dalla mappa
-        persist();  // Aggiorna il file saves.json
+        savedData.remove(key);  // Remove the object from the map
+        persist();  // Update the file
     }
 
-
+    /**
+     * Clears all data from the game state and persists the changes to the file.
+     * <p>
+     * Empties the in-memory data map and writes the empty map to the file.
+     * </p>
+     */
     public void clear() {
-        savedData.clear();  // Cancella tutti i dati nella mappa
-        persist();  // Aggiorna il file saves.json
+        savedData.clear();   // Clear all data in the map
+        persist();  // Update the file
     }
 }
