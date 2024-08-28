@@ -1,0 +1,45 @@
+@startuml EnterInternalSequenceDiagram
+
+!theme materia-outline
+
+skinparam ArrowColor #DC143C
+skinparam BackgroundColor #FFFFFF
+
+skinparam titleBorderColor #DC143C
+skinparam titleFontColor #DC143C
+
+skinparam ActorBorderColor #DC143C
+skinparam ActorFontColor #DC143C
+
+skinparam ParticipantFontColor #DC143C
+skinparam ParticipantBorderColor #DC143C
+
+skinparam SequenceGroupBorderColor #DC143C
+
+title Move - Internal Sequence Diagram
+
+actor User
+participant GameUI
+participant GameManager
+participant Player
+
+activate GameUI
+User -> GameUI : input "move" command
+
+activate GameManager
+GameUI -> GameManager : commandControl("move")
+
+activate Player
+GameManager -> Player : getposition()
+Player --> GameManager : return the position of the Player
+  alt the room is locked || room not available
+    GameManager -> GameManager : room move operation
+    GameManager --> GameUI : return "No such room"
+    GameUI --> User : display message
+  else the room is unlocked && room available
+    GameManager -> GameManager : room move operation
+    GameManager --> GameUI : return "You are now in <room>"
+    GameUI --> User : display message
+  end
+
+@enduml
