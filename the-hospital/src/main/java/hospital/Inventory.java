@@ -5,34 +5,31 @@ import java.util.ArrayList;
 
 public class Inventory
 {
-	private ArrayList<ItemEquippable> inventory = new ArrayList<>();
+	private ArrayList<Item> inventory = new ArrayList<>();
 
-	public void addItem(ItemEquippable item)
+	public void addItem(Item item)
 	{
 		inventory.add(item);
 	}
-	public void removeItem(ItemEquippable item)
+	public void removeItem(String item)
 	{
-		inventory.remove(item);
-	}
-	public boolean searchItem(ItemEquippable item)
-	{
-		if(inventory.contains(item))
+		for(int i=0;i<inventory.size();i++)
 		{
-			//do eventual operation
-			return true;
+			if(inventory.get(i).getName().toLowerCase().equals(item))
+			{
+				inventory.remove(inventory.get(i));
+				return ;
+			}
 		}
-		else
-			return false;
 	}
-	public String displayItem()
+	public boolean searchItem(String item)
 	{
-		String items = "";
-		for (ItemEquippable item : inventory)
+		for(int i=0;i<inventory.size();i++)
 		{
-            items = items + item.getName() + " ";
-        }
-		return items;
+			if(inventory.get(i).getName().toLowerCase().equals(item))
+				return true;
+		}
+		return false;
 	}
 }
 
