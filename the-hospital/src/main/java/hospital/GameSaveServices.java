@@ -45,7 +45,7 @@ public class GameSaveServices implements AutoCloseable
     public GameSaveServices()
     {
         // Externalize the region and credentials provider if possible
-        Region region = Region.of(System.getenv("AWS_REGION")); // Use environment variable or other configuration
+        Region region = Region.EU_NORTH_1; // Use environment variable or other configuration
         String bucketNameConfig = Config.getBucketName();
         
         if (bucketNameConfig == null || bucketNameConfig.isEmpty()) {

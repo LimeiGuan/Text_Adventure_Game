@@ -43,10 +43,10 @@ public class GameUI extends Application
         gameManager = new GameManager(); // Initialize the GameManager
 
         // Load the images for the map
-        Image image1 = new Image("floor1.png");
-        Image image2 = new Image("floor2.png");
-        Image image3 = new Image("groundfloor.png");
-        Image image4 = new Image("lift.png");
+        Image image1 = new Image("/floor1.png");
+        Image image2 = new Image("/floor2.png");
+        Image image3 = new Image("/groundfloor.png");
+        Image image4 = new Image("/lift.png");
 
         // Create the label
         Label hpLabel = new Label("HP");
@@ -67,7 +67,7 @@ public class GameUI extends Application
         imageView.setFitWidth(500);
         imageView.setFitHeight(300);
         // Temp Image
-        Image image = new Image("Background.png");
+        Image image = new Image("/Background.png");
         imageView.setImage(image);
 
         VBox imageBox = new VBox(imageView);
@@ -198,7 +198,7 @@ public class GameUI extends Application
 
         // Create and set the scene with fixed width and height
         Scene scene = new Scene(root, 800, 500);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm()); // Load CSS
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm()); // Load CSS
         primaryStage.setTitle("The Hospital");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false); // Make the stage non-resizable
@@ -214,19 +214,19 @@ public class GameUI extends Application
     {
         if (value >= 200 && value <= 203)
         {
-            mapImageView.setImage(new Image("floor2.png"));
+            mapImageView.setImage(new Image("/floor2.png"));
         }
         else if (value >= 100 && value <= 103)
         {
-            mapImageView.setImage(new Image("floor1.png"));
+            mapImageView.setImage(new Image("/floor1.png"));
         }
         else if (value >= 0 && value <= 3)
         {
-            mapImageView.setImage(new Image("groundfloor.png"));
+            mapImageView.setImage(new Image("/groundfloor.png"));
         }
         else if (value == 999)
         {
-            mapImageView.setImage(new Image("lift.png"));
+            mapImageView.setImage(new Image("/lift.png"));
         }
     }
 
