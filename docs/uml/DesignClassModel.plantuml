@@ -198,6 +198,7 @@ GameManager"1" --|> "n"Enemy : creates
 GameManager"1" <|--|> "1"GameUI : uses
 GameManager"1" --|> "1"Map : creates
 GameManager"1" --|> "1"GameSaveServices : uses
+GameManager"1" --|> "1"GameState : uses
 GameSaveServices"1" --|> "1"GameState : uses
 GameSaveServices"1" --|> "1"Config : uses
 
