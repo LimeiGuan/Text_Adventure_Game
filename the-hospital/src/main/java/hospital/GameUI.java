@@ -143,7 +143,7 @@ public class GameUI extends Application
 
             if (!stop)
             {
-                String input = gameManager.commandControl(userInput); // Get the reversed string from GameManager
+                String input = gameManager.commandControl(userInput); 
                 if(temp[0].toLowerCase().equals("inventory"))
                 {
                 	String outsplit = "";
